@@ -19,7 +19,7 @@ namespace POP_SF_64_2017_GUI.Prozori
     /// <summary>
     /// Interaction logic for SalonProzor.xaml
     /// </summary>
-    public partial class SalonProzor : Window,  INotifyPropertyChanged
+    public partial class ProdavacProzor : Window, INotifyPropertyChanged
     {
         public static bool dodaj;
         private List<Namestaj> listaNamestaja;
@@ -41,7 +41,7 @@ namespace POP_SF_64_2017_GUI.Prozori
 
         private List<Namestaj> listaZaProdaju = new List<Namestaj>();
 
-        public SalonProzor()
+        public ProdavacProzor()
         {
             InitializeComponent();
             DataContext = this;
@@ -56,45 +56,7 @@ namespace POP_SF_64_2017_GUI.Prozori
 
         }
 
-        private void DodajNamestaj_Click(object sender, RoutedEventArgs e)
-        {
-            Namestaj n = new Namestaj();
-            dodaj = false;
-            DodajNamestajProzor dodajNamestaj = new DodajNamestajProzor(n);
-            dodajNamestaj.ShowDialog();
-            if (dodaj)
-            {
-                ListaNamestaja.Add(n);
-                Refresh();
-            }
-        }
-
-        private void IzmeniNamestaj_Click(object sender, RoutedEventArgs e)
-        {
-            if(IzabraniNamestaj != null)
-            {
-                Namestaj n = new Namestaj(IzabraniNamestaj);
-                dodaj = false;
-                DodajNamestajProzor dodajNamestaj = new DodajNamestajProzor(n);
-                dodajNamestaj.ShowDialog();
-                if (dodaj)
-                {
-                    IzabraniNamestaj.Zameni(n);
-                    Refresh();
-                }
-            }
-        }
-
-        private void ObrisiNamestaj_Click(object sender, RoutedEventArgs e)
-        {
-            if(IzabraniIndex >= 0 && IzabraniIndex < ListaNamestaja.Count)
-            {
-                ListaNamestaja.RemoveAt(IzabraniIndex);
-                IzabraniIndex = -1;
-                Refresh();
-            }
-        }
-
+        
         #region INotifyPropertyChanged 
 
         public event PropertyChangedEventHandler PropertyChanged;

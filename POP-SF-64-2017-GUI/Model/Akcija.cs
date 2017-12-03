@@ -41,5 +41,10 @@ namespace POP_SF_64_2017_GUI.Model
             Popust = popust;
             Obrisano = obrisano;
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0} - {1}", PocetakAkcije.ToShortDateString(), KrajAkcije.ToShortDateString());
+        }
     }
 }

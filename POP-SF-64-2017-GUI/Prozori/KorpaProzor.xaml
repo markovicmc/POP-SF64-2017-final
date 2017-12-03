@@ -1,0 +1,35 @@
+﻿<Window x:Class="POP_SF_64_2017_GUI.Prozori.KorpaProzor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POP_SF_64_2017_GUI.Prozori"
+        mc:Ignorable="d"
+        Title="KorpaProzor" Height="333.835" Width="438.722">
+    <Grid>
+        <DataGrid HorizontalAlignment="Left" Height="192" Margin="10,10,0,0" VerticalAlignment="Top" Width="350"
+              ItemsSource="{Binding ListaKupovine}" SelectedItem="{Binding IzabraniNamestaj, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedIndex="{Binding IzabraniIndex, UpdateSourceTrigger=PropertyChanged}"
+              AutoGenerateColumns="False"  Name="dataGrid1" SelectionMode="Single" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="60" Header="Ime" Binding="{Binding Naziv}" />
+                <DataGridTextColumn Header="Cena" Binding="{Binding Cena}" />
+                <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" />
+                <DataGridTextColumn Width="100" Header="Akcija" Binding="{Binding Akcija}" />
+                <DataGridTemplateColumn Header="" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button  x:Name="buttonAdd" Content="Izbaci" Margin="3" MinWidth="30" Click="ButtonAddToShop_Click"/> 
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="Kupi" Content="Kupi" HorizontalAlignment="Left" Margin="10,259,0,0" VerticalAlignment="Top" Width="75" Click="Kupi_Click"/>
+        <Button Name="Nastavi" Content="Nastavi" HorizontalAlignment="Left" Margin="108,259,0,0" VerticalAlignment="Top" Width="75" Click="Nastavi_Click"/>
+        <Button Name="Odustani" Content="Odustani" HorizontalAlignment="Left" Margin="207,259,0,0" VerticalAlignment="Top" Width="75" Click="Odustani_Click"/>
+        <Label Content="Suma" HorizontalAlignment="Left" Margin="10,219,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.043,0.327"/>
+        <Label Name="suma" Content="" HorizontalAlignment="Left" Margin="71,219,0,0" VerticalAlignment="Top" Width="79" Height="26"/>
+
+    </Grid>
+</Window>

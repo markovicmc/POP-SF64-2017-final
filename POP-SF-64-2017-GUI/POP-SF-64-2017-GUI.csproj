@@ -55,8 +55,20 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Database.cs" />
+    <Compile Include="Prozori\AkcijaProzor.xaml.cs">
+      <DependentUpon>AkcijaProzor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Prozori\DodajNamestajProzor.xaml.cs">
       <DependentUpon>DodajNamestajProzor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prozori\KorisniciProzor.xaml.cs">
+      <DependentUpon>KorisniciProzor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prozori\KorpaProzor.xaml.cs">
+      <DependentUpon>KorpaProzor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prozori\ProdavacProzor.xaml.cs">
+      <DependentUpon>ProdavacProzor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Prozori\SalonProzor.xaml.cs">
       <DependentUpon>SalonProzor.xaml</DependentUpon>
@@ -73,7 +85,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Prozori\AkcijaProzor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Prozori\DodajNamestajProzor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Prozori\KorisniciProzor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Prozori\KorpaProzor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Prozori\ProdavacProzor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

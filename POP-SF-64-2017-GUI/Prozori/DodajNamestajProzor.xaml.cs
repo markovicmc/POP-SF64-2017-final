@@ -56,7 +56,8 @@ namespace POP_SF_64_2017_GUI.Prozori
 
         private void DodajAkciju_Click(object sender, RoutedEventArgs e)
         {
-
+            AkcijaProzor akcijaProzor = new AkcijaProzor();
+            akcijaProzor.Show();
         }
     }
 }

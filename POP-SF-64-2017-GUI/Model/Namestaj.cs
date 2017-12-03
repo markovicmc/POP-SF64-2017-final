@@ -23,6 +23,20 @@ namespace POP_SF_64_2017_GUI.Model
 
         }
 
+        public Namestaj(Namestaj n)
+        {
+            Naziv = n.Naziv;
+            Sifra = n.Sifra;
+            Cena = n.Cena;
+            Kolicina = n.Kolicina;
+            Tip = n.Tip;
+            Obrisano = n.Obrisano;
+            Akcija = n.Akcija;
+            ID = n.ID;
+        }
+
+       
+
         public Namestaj(string naziv, string sifra, double cena, int kolicina, string tip, bool akcijaPostoji, bool obrisano )
         {
             Naziv = naziv;
@@ -34,6 +48,19 @@ namespace POP_SF_64_2017_GUI.Model
             if(akcijaPostoji)
                 Akcija = new Akcija(Naziv + "Akcija", DateTime.Now, DateTime.Now.AddMonths(1), 10, false);
 
+        }
+
+
+        public void Zameni(Namestaj n)
+        {
+            Naziv = n.Naziv;
+            Sifra = n.Sifra;
+            Cena = n.Cena;
+            Kolicina = n.Kolicina;
+            Tip = n.Tip;
+            Obrisano = n.Obrisano;
+            Akcija = n.Akcija;
+            ID = n.ID;
         }
 
     }

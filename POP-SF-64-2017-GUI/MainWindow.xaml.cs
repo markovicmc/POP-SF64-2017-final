@@ -37,7 +37,15 @@ namespace POP_SF_64_2017_GUI
                 Korisnik k = Database.Korisnici[username]; //napravi objekat k za taj username
                 if (k.Password == pass) //ako se Password tog objekta poklapa sa ovim passwordom
                 {
-                    SalonProzor salonWindow = new SalonProzor();
+                    Window salonWindow;
+                    if (k.Tip == TipKorisnika.ADMINISTRATOR)
+                    {
+                        salonWindow = new SalonProzor();
+                    }
+                    else
+                    {
+                        salonWindow = new ProdavacProzor();
+                    }
                     salonWindow.Show();
                     this.Close();
                     return;

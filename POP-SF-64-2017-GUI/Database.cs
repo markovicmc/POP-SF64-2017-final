@@ -25,6 +25,9 @@ namespace POP_SF_64_2017_GUI
 
             Korisnik k2 = new Korisnik(1, "Aleksis", "Jagodic", "jag", "jag", TipKorisnika.PRODAVAC);
             Korisnici[k2.Username] = k2;
+
+            Korisnik k3 = new Korisnik(1, "Prodavac", "Proda", "prod", "prod", TipKorisnika.PRODAVAC);
+            Korisnici[k3.Username] = k3;
         }
     }
-}
+} 
