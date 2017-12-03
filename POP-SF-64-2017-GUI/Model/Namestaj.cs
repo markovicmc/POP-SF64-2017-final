@@ -31,7 +31,8 @@ namespace POP_SF_64_2017_GUI.Model
             Kolicina = kolicina;
             Tip = tip;
             Obrisano = obrisano;
-            Akcija = new Akcija(Naziv + "Akcija", DateTime.Now, DateTime.Now.AddMonths(1), 10, false);
+            if(akcijaPostoji)
+                Akcija = new Akcija(Naziv + "Akcija", DateTime.Now, DateTime.Now.AddMonths(1), 10, false);
 
         }
 

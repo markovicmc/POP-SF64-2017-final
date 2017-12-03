@@ -55,8 +55,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Database.cs" />
-    <Compile Include="UI\NamestajWindow.xaml.cs">
-      <DependentUpon>NamestajWindow.xaml</DependentUpon>
+    <Compile Include="Prozori\DodajNamestajProzor.xaml.cs">
+      <DependentUpon>DodajNamestajProzor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prozori\SalonProzor.xaml.cs">
+      <DependentUpon>SalonProzor.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -70,7 +73,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UI\NamestajWindow.xaml">
+    <Page Include="Prozori\DodajNamestajProzor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Prozori\SalonProzor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

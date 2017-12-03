@@ -28,7 +28,7 @@
         <Button Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="5" Margin="219,79,0,0" Click="btnCancel" IsCancel="True" Height="22" Grid.Row="3"/>
         <Label Content="~DOBRODOŠLI U SALON NAMEŠTAJA~" Grid.Column="2" HorizontalAlignment="Left" Margin="62,29,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4" Width="222" Height="26"/>
         <Label Content="*Molimo unesite korisničke podatke" Grid.Column="2" HorizontalAlignment="Left" Margin="65,76,0,0" VerticalAlignment="Top" Width="222" Grid.ColumnSpan="4"/>
-        <PasswordBox Grid.Column="5" Name="pbSifra" PasswordChar="*" HorizontalAlignment="Left" Margin="56,21,0,0" Grid.Row="3" VerticalAlignment="Top" Width="120" Height="24"/>
+        <PasswordBox Name="tbPassword" Grid.Column="5" PasswordChar="*" HorizontalAlignment="Left" Margin="56,21,0,0" Grid.Row="3" VerticalAlignment="Top" Width="120" Height="24"/>
 
     </Grid>
 </Window>

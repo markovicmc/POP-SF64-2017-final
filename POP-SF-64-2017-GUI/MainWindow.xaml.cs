@@ -1,5 +1,5 @@
 ﻿using POP_SF_64_2017_GUI.Model;
-using POP_SF_64_2017_GUI.UI;
+using POP_SF_64_2017_GUI.Prozori;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,22 +30,22 @@ namespace POP_SF_64_2017_GUI
         private void btnOK(object sender, RoutedEventArgs e)
         {
             string username = this.tbUsername.Text;
-            string pass = this.tbPassword.Text;
+            string pass = this.tbPassword.Password.ToString();
 
             if (Database.Korisnici.ContainsKey(username)) //ako ovaj username postoji u Korisnicima
             {
                 Korisnik k = Database.Korisnici[username]; //napravi objekat k za taj username
                 if (k.Password == pass) //ako se Password tog objekta poklapa sa ovim passwordom
                 {
-                    NamestajWindow namestajProzor = new NamestajWindow(k);
-                    namestajProzor.Show();
+                    SalonProzor salonWindow = new SalonProzor();
+                    salonWindow.Show();
                     this.Close();
                     return;
                 }
             }
 
             this.tbUsername.Text = "";
-            this.tbPassword.Text = "";
+            this.tbPassword.Password = "";
 
             MessageBox.Show(this, "Neispravno ime ili lozinka.");
 
