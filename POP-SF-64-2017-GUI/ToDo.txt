@@ -1,0 +1,7 @@
+1. Combobox za tip namestaja
+2. Kolicina da se vidi
+3. Obrisi - provera pitanje
+4. Napravi za svaki posebno da moze CRUD/prozore
+5. Napravi listing akcija i da svaka moze pojedinacno da se obrise
+6. Automatski se generise ID, to ne treba nikome da bude vidljivo
+7. 20% popusta i validacija

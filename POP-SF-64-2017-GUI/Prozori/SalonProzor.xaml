@@ -16,10 +16,11 @@
                 <DataGridTextColumn Header="Cena" Binding="{Binding Cena}" />
                 <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" />
                 <DataGridTextColumn Width="100" Header="Akcija" Binding="{Binding Akcija}" />
+                <DataGridTextColumn Width="100" Header="Tip" Binding="{Binding Tip}" />
                 <DataGridTemplateColumn Header="" Width="50">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button  x:Name="buttonAdd" Content="Ubaci" Margin="3" MinWidth="30" Click="ButtonAddToShop_Click"/>
+                            <Button  x:Name="buttonAdd" Content="Ubaci" Margin="3" MinWidth="30" Click="DodajUKorpu_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -30,6 +31,7 @@
         <Button Name="IzmeniNamestaj" Content="Izmeni" HorizontalAlignment="Left" Margin="162,259,0,0" VerticalAlignment="Top" Width="75" Click="IzmeniNamestaj_Click"/>
         <Button Name="ObrisiNamestaj" Content="Obrisi" HorizontalAlignment="Left" Margin="321,259,0,0" VerticalAlignment="Top" Width="75" Click="ObrisiNamestaj_Click"/>
         <Button Name="SviKorisnici" Content="Korisnici" HorizontalAlignment="Left" Margin="421,106,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="KATALOG NAMESTAJA:" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

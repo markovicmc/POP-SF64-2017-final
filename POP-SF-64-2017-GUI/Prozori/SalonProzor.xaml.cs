@@ -22,7 +22,9 @@ namespace POP_SF_64_2017_GUI.Prozori
     public partial class SalonProzor : Window,  INotifyPropertyChanged
     {
         public static bool dodaj;
+
         private List<Namestaj> listaNamestaja;
+
         public List<Namestaj> ListaNamestaja
         {
             get
@@ -36,10 +38,10 @@ namespace POP_SF_64_2017_GUI.Prozori
             }
         }
 
-        public Namestaj IzabraniNamestaj { get; set; }
+        public Namestaj IzabraniNamestaj { get; set; } //DataGrid je bindovan na ova dva
         public int IzabraniIndex { get; set; }
 
-        private List<Namestaj> listaZaProdaju = new List<Namestaj>();
+        private List<Namestaj> listaZaProdaju = new List<Namestaj>(); //ovu listu prosledjujemo korpi
 
         public SalonProzor()
         {
@@ -122,7 +124,7 @@ namespace POP_SF_64_2017_GUI.Prozori
             korpa.ShowDialog();
         }
 
-        private void ButtonAddToShop_Click(object sender, RoutedEventArgs e)
+        private void DodajUKorpu_Click(object sender, RoutedEventArgs e)
         {
             listaZaProdaju.Add(IzabraniNamestaj);
         }

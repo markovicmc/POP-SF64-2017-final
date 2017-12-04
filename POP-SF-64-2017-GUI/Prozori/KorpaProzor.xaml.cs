@@ -92,7 +92,7 @@ namespace POP_SF_64_2017_GUI.Prozori
         }
         #endregion
 
-        private void ButtonAddToShop_Click(object sender, RoutedEventArgs e)
+        private void DodajUKorpu_Click(object sender, RoutedEventArgs e)
         {
             if (IzabraniIndex >= 0 && IzabraniIndex < ListaKupovine.Count)
             {
@@ -101,5 +101,7 @@ namespace POP_SF_64_2017_GUI.Prozori
                 Refresh();
             }
         }
+
+       
     }
 }

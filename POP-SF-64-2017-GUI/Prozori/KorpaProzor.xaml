@@ -19,7 +19,7 @@
                 <DataGridTemplateColumn Header="" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button  x:Name="buttonAdd" Content="Izbaci" Margin="3" MinWidth="30" Click="ButtonAddToShop_Click"/> 
+                            <Button  x:Name="buttonAdd" Content="Izbaci" Margin="3" MinWidth="30" Click="DodajUKorpu_Click"/> 
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

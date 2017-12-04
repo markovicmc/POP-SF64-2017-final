@@ -32,7 +32,7 @@ namespace POP_SF_64_2017_GUI.Prozori
         private void btnPovratak(object sender, RoutedEventArgs e)
         {
             this.Close();
-            //kako da vratim na DodajNamestajProzor? Ne prihvata DNP.Show();
+            
         }
     }
 }
