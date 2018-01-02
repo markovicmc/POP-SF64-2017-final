@@ -128,5 +128,11 @@ namespace POP_SF_64_2017_GUI.Prozori
         {
             listaZaProdaju.Add(IzabraniNamestaj);
         }
+
+        private void SviKorisnici_Click(object sender, RoutedEventArgs e)
+        {
+            KorisniciProzor prozor = new KorisniciProzor();
+            prozor.ShowDialog();
+        }
     }
 }

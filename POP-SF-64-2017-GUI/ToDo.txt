@@ -5,3 +5,10 @@
 5. Napravi listing akcija i da svaka moze pojedinacno da se obrise
 6. Automatski se generise ID, to ne treba nikome da bude vidljivo
 7. 20% popusta i validacija
+
+1. Objekat u objektu u Modelu je dozvoljen samo uz xml ignore
+2. Brisanje iz DataGrida tako da nestanu i kolone i redovi 
+3. Stavimo i namestaj i Dodatnu uslugu kao stavke DG u onda cemo moci da izlistamo oba istovremeno iz tog DG
+4. Kolicina namestaja (ima li ga?)
+. Akcija je l istekla ili ne
+. Zakaciti listenere na observable collectione da detektuju promene

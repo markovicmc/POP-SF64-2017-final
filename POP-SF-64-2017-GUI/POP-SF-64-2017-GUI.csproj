@@ -58,6 +58,9 @@
     <Compile Include="Prozori\AkcijaProzor.xaml.cs">
       <DependentUpon>AkcijaProzor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Prozori\DodajKorisnikaProzor.xaml.cs">
+      <DependentUpon>DodajKorisnikaProzor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Prozori\DodajNamestajProzor.xaml.cs">
       <DependentUpon>DodajNamestajProzor.xaml</DependentUpon>
     </Compile>
@@ -73,6 +76,8 @@
     <Compile Include="Prozori\SalonProzor.xaml.cs">
       <DependentUpon>SalonProzor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utils\DBSQLServerUtils.cs" />
+    <Compile Include="Utils\DBUtils.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,6 +91,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Prozori\AkcijaProzor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Prozori\DodajKorisnikaProzor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -142,5 +151,6 @@
   <ItemGroup>
     <None Include="Prozori\App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

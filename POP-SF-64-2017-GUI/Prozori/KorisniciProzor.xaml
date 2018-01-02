@@ -5,12 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_64_2017_GUI.Prozori"
         mc:Ignorable="d"
-        Title="KorisniciProzor" Height="300" Width="300">
-    <Grid>
-        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="23,229,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Povratak" HorizontalAlignment="Left" Margin="103,229,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Sacuvaj" HorizontalAlignment="Left" Margin="183,229,0,0" VerticalAlignment="Top" Width="75"/>
-        <DataGrid HorizontalAlignment="Left" Height="190" Margin="10,20,0,0" VerticalAlignment="Top" Width="272"/>
+        Title="KorisniciProzor" Height="396" Width="482.6">
+    <Grid Margin="0,0,36,0">
+        <DataGrid HorizontalAlignment="Left" Height="256" Margin="0,38,-36,0" VerticalAlignment="Top" Width="475"
+                  ItemsSource="{Binding Korisnici}" SelectedItem="{Binding SelektovanKorisnik}"
+                    AutoGenerateColumns="False"  SelectionMode="Single" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="115" Header="Ime" Binding="{Binding Ime}"/>
+                <DataGridTextColumn Width="120" Header="Prezime" Binding="{Binding Prezime}"/>
+                <DataGridTextColumn Width="118" Header="Korisnicko ime" Binding="{Binding Username}"/>
+                <DataGridTextColumn Width="120" Header="Tip korisnika" Binding="{Binding Tip}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Name="DodajKorisnikaDugme" Content="Dodaj" HorizontalAlignment="Left" Margin="23,318,0,0" VerticalAlignment="Top" Width="75" Click="DodajKorisnikaDugme_Click"/>
+        <Button Name="PovratakDugme" Content="Povratak" HorizontalAlignment="Left" Margin="383,318,-19,0" VerticalAlignment="Top" Width="75" Click="PovratakDugme_Click"/>
+
+        <Label Content="KORISNICI" HorizontalAlignment="Left" Margin="23,7,0,0" VerticalAlignment="Top"/>
+        <Button Name="IzmeniKorisnikaDugme" Content="Izmeni" HorizontalAlignment="Left" Margin="103,318,0,0" VerticalAlignment="Top" Width="75" Click="IzmeniKorisnikaDugme_Click"/>
 
     </Grid>
 </Window>

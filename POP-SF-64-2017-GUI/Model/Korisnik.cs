@@ -17,6 +17,16 @@
 
         }
 
+        public Korisnik(Korisnik k)
+        {
+            ID = k.ID;
+            Ime = k.Ime;
+            Prezime = k.Prezime;
+            Username = k.Username;
+            Password = k.Password;
+            Tip = k.Tip;
+        }
+
         public Korisnik(int id, string ime, string prezime, string username, string password, TipKorisnika tip)
         {
             ID = id;
@@ -24,7 +34,17 @@
             Prezime = prezime;
             Username = username;
             Password = password;
-            Tip = tip; 
+            Tip = tip;
+        }
+
+        public void Zameni(Korisnik k)
+        {
+            ID = k.ID;
+            Ime = k.Ime;
+            Prezime = k.Prezime;
+            Username = k.Username;
+            Password = k.Password;
+            Tip = k.Tip;
         }
      }
 }

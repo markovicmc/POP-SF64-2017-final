@@ -19,7 +19,7 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="126,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button Content="Povratak" Click="btnPovratak" HorizontalAlignment="Left" Margin="49,231,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Sacuvaj" Click="btnSacuvaj" HorizontalAlignment="Left" Margin="171,231,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.532,0.365"/>
-        <CheckBox Content="Obrisi akciju" HorizontalAlignment="Left" Margin="94,194,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Obrisi akciju" HorizontalAlignment="Left" Margin="126,195,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

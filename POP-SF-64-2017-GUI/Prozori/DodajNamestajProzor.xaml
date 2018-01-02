@@ -17,10 +17,10 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="127,41,0,0" TextWrapping="Wrap" Text="{Binding Namestaj.Sifra, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="127,72,0,0" TextWrapping="Wrap" Text="{Binding Cena, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="127,103,0,0" TextWrapping="Wrap" Text="{Binding Namestaj.Kolicina, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="127,137,0,0" TextWrapping="Wrap" Text="{Binding Namestaj.Tip, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
         <Button Name="DodajNamestaj" Content="Sacuvaj" HorizontalAlignment="Left" Margin="49,234,0,0" VerticalAlignment="Top" Width="75" Click="DodajNamestaj_Click"/>
         <Button Name="Odustani" Content="Odustani" HorizontalAlignment="Left" Margin="172,234,0,0" VerticalAlignment="Top" Width="75" Click="Odustani_Click"/>
         <Button Name="DodajAkciju" Content="Dodaj akciju" HorizontalAlignment="Left" Margin="127,169,0,0" VerticalAlignment="Top" Width="75" Click="DodajAkciju_Click"/>
+        <ComboBox HorizontalAlignment="Left" Margin="127,138,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
