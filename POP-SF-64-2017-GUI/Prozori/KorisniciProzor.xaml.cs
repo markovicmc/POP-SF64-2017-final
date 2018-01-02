@@ -30,8 +30,9 @@ namespace POP_SF_64_2017_GUI.Prozori
 
         public Korisnik SelektovanKorisnik { get; set; }
 
-        private List<Korisnik> korisnici =  Database.Korisnici.Values.ToList();
-        public List<Korisnik> Korisnici {
+        private List<Korisnik> korisnici = Database.Korisnici.Values.ToList();
+        public List<Korisnik> Korisnici
+        {
             get
             {
                 korisnici = Database.Korisnici.Values.ToList();
@@ -39,7 +40,7 @@ namespace POP_SF_64_2017_GUI.Prozori
             }
             set
             {
-                korisnici =  Database.Korisnici.Values.ToList();
+                korisnici = Database.Korisnici.Values.ToList();
                 OnPropertyChanged("Korisnici");
             }
         }
@@ -96,9 +97,28 @@ namespace POP_SF_64_2017_GUI.Prozori
         void Refresh()
         {
             // List<Namestaj> tempList = new List<Namestaj>(korisnici);
-            Korisnici = new List<Korisnik>() ;
+            Korisnici = new List<Korisnik>();
         }
         #endregion
 
+        private void Button_Click(object sender, RoutedEventArgs e) //obrisi button
+        {
+            string sMessageBoxText = "Da li zelite da obrisete korisnika?";
+            string sCaption = "Brisanje korisnika";
+
+            MessageBoxButton btnMessageBox = MessageBoxButton.YesNo;
+            MessageBoxImage icnMessageBox = MessageBoxImage.Warning;
+
+            MessageBoxResult rsltMessageBox = MessageBox.Show(sMessageBoxText, sCaption, btnMessageBox, icnMessageBox);
+
+            if (rsltMessageBox == MessageBoxResult.Yes)
+            {
+                if (Database.Korisnici.ContainsKey(SelektovanKorisnik.Username))
+                {
+                    Database.Korisnici.Remove(SelektovanKorisnik.Username);
+                }
+                Refresh();
+            }
+        }
     }
 }

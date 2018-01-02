@@ -14,6 +14,7 @@ namespace POP_SF_64_2017_GUI
 {
     public class Database
     {
+        public static List<string> TipoviNamestaja = new List<string>() { "SVE", "Kuhinja", "Spavaca soba", "Kupatilo" };
         public static Dictionary<string, Korisnik> Korisnici;
 
         static Database()

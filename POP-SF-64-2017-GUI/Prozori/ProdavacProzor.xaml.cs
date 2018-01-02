@@ -46,6 +46,7 @@ namespace POP_SF_64_2017_GUI.Prozori
             InitializeComponent();
             DataContext = this;
             UcitajNamestaj();
+            cbTipPretrage.ItemsSource = Database.TipoviNamestaja;
         }
 
         private void UcitajNamestaj()
@@ -87,6 +88,30 @@ namespace POP_SF_64_2017_GUI.Prozori
         private void ButtonAddToShop_Click(object sender, RoutedEventArgs e)
         {
             listaZaProdaju.Add(IzabraniNamestaj);
+        }
+
+        private void Zatvori(object sender, RoutedEventArgs e)
+        {
+            new MainWindow().Show();
+            this.Close();
+        }
+
+        private void PretragaDugme_Click(object sender, RoutedEventArgs e)
+        {
+            List<Namestaj> tempList = new List<Namestaj>();
+
+            foreach (var item in ListaNamestaja)
+            {
+                if(cbTipPretrage.SelectedValue.ToString() == "SVE" || item.Tip == cbTipPretrage.SelectedValue.ToString())
+                {
+                    if (item.Naziv.Contains(tbPretraga.Text))
+                    {
+                        tempList.Add(item);
+                    }
+                }
+            }
+
+            ListaNamestaja = tempList;
         }
     }
 }
