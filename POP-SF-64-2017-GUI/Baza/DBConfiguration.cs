@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace POP_SF_64_2017_GUI.Utils
+namespace POP_SF_64_2017_GUI.Baza
 {
     public class DBConfiguration : DbMigrationsConfiguration<Context>
     {

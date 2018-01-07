@@ -12,3 +12,17 @@
 4. Kolicina namestaja (ima li ga?)
 . Akcija je l istekla ili ne
 . Zakaciti listenere na observable collectione da detektuju promene
+
+
+*Obrisi korisnika, namestaj...
+
+Tamara sama:
+
+1. Prodaja model, prozor
+2. Racun model, prozor?
+3. Sortiranje proveriti
+4. Dodati labelu za procente u popust i odraditi validaciju
+5. Akcija
+6. Akcija i DatePickeri
+7. Usluga
+

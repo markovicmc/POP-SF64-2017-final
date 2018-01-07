@@ -37,6 +37,9 @@
     <Reference Include="EntityFramework">
       <HintPath>packages\EntityFramework.6.2.0-beta1\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>packages\EntityFramework.6.2.0-beta1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -57,7 +60,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Baza\Context.cs" />
+    <Compile Include="Baza\DBConfiguration.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="Model\Prodaja.cs" />
+    <Compile Include="Model\Usluga.cs" />
     <Compile Include="Prozori\AkcijaProzor.xaml.cs">
       <DependentUpon>AkcijaProzor.xaml</DependentUpon>
     </Compile>
@@ -73,14 +80,15 @@
     <Compile Include="Prozori\KorpaProzor.xaml.cs">
       <DependentUpon>KorpaProzor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Prozori\ProdajaProzor.xaml.cs">
+      <DependentUpon>ProdajaProzor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Prozori\ProdavacProzor.xaml.cs">
       <DependentUpon>ProdavacProzor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Prozori\SalonProzor.xaml.cs">
       <DependentUpon>SalonProzor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utils\DBSQLServerUtils.cs" />
-    <Compile Include="Utils\DBUtils.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -110,6 +118,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Prozori\KorpaProzor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Prozori\ProdajaProzor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -146,6 +158,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

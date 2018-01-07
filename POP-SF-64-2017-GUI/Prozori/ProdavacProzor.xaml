@@ -33,9 +33,6 @@
         <ComboBox Name="cbTipPretrage" HorizontalAlignment="Left" Height="23" Margin="204,15,0,0" VerticalAlignment="Top" Width="99"/>
         <Label Content="Pretraga po tipu:" HorizontalAlignment="Left" Margin="100,12,0,0" VerticalAlignment="Top"/>
         <Button Name="PretragaDugme" Content="Pretrazi" HorizontalAlignment="Left" Margin="422,16,0,0" VerticalAlignment="Top" Width="75" Click="PretragaDugme_Click"/>
-        <Button Name="SortDugme" Content="Sortiraj" HorizontalAlignment="Left" Margin="308,52,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Name="PonistiDugme" Content="Ponisti" HorizontalAlignment="Left" Margin="422,50,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="Sortirati po " HorizontalAlignment="Left" Margin="124,50,0,0" VerticalAlignment="Top" Width="75"/>
-        <ComboBox HorizontalAlignment="Left" Margin="204,52,0,0" VerticalAlignment="Top" Width="99"/>
     </Grid>
 </Window>

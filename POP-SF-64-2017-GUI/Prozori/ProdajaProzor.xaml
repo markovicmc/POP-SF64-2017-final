@@ -1,0 +1,25 @@
+﻿<Window x:Class="POP_SF_64_2017_GUI.Prozori.ProdajaProzor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POP_SF_64_2017_GUI.Prozori"
+        mc:Ignorable="d"
+        Title="ProdajaProzor" Height="386.842" Width="770.302">
+    <Grid HorizontalAlignment="Left" Width="290">
+        <DataGrid HorizontalAlignment="Left" Height="231" VerticalAlignment="Top" Width="761" Margin="0,51,-471,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="110" Header="Datum prodaje" />
+                <DataGridTextColumn Width="110" Header="Broj racuna" />
+                <DataGridTextColumn Width="110" Header="Naziv proizvoda" />
+                <DataGridTextColumn Width="110" Header="Kolicina" />
+                <DataGridTextColumn Width="110" Header="Kupac" />
+                <DataGridTextColumn Width="110" Header="Prodavac" />
+                <DataGridTextColumn Width="110" Header="Dodatna usluga" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="EVIDENCIJA PRODAJE" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="358,316,-143,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Obrisi" HorizontalAlignment="Left" Margin="449,316,-234,0" VerticalAlignment="Top" Width="75"/>
+    </Grid>
+</Window>

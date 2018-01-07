@@ -1,7 +1,9 @@
-﻿using POP_SF_64_2017_GUI.Model;
+﻿using POP_SF_64_2017_GUI.Baza;
+using POP_SF_64_2017_GUI.Model;
 using POP_SF_64_2017_GUI.Prozori;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +26,25 @@ namespace POP_SF_64_2017_GUI
     {
         public MainWindow()
         {
+            string path = Directory.GetCurrentDirectory();
+            path = path.Substring(0, path.LastIndexOf("bin")) + "Baza";
+            AppDomain.CurrentDomain.SetData("DataDirectory", path);
             InitializeComponent();
+     
+            using (var unitOfWork = new Context())
+            {
+                if (unitOfWork.Korisnici.Find(1) == null)
+                {
+                    unitOfWork.Korisnici.Add(new Korisnik(0, "admin1", "admin1", "admin1", "admin1", TipKorisnika.ADMINISTRATOR));
+                    unitOfWork.SaveChanges();
+                    MessageBox.Show("Dodat admin1");
+                }
+                else
+                {
+                    MessageBox.Show("Vec postoji admin1");
+                }
+
+            }
         }
 
         private void btnOK(object sender, RoutedEventArgs e)
