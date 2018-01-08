@@ -19,7 +19,7 @@
         </DataGrid>
 
         <Button Name="DodajKorisnikaDugme" Content="Dodaj" HorizontalAlignment="Left" Margin="23,318,0,0" VerticalAlignment="Top" Width="75" Click="DodajKorisnikaDugme_Click"/>
-        <Button Name="PovratakDugme" Content="Povratak" HorizontalAlignment="Left" Margin="383,318,-19,0" VerticalAlignment="Top" Width="75" Click="PovratakDugme_Click"/>
+        <Button Name="PovratakDugme" Content="Povratak" HorizontalAlignment="Left" Margin="375,318,-11,0" VerticalAlignment="Top" Width="75" Click="PovratakDugme_Click"/>
 
         <Label Content="KORISNICI" HorizontalAlignment="Left" Margin="23,7,0,0" VerticalAlignment="Top"/>
         <Button Name="IzmeniKorisnikaDugme" Content="Izmeni" HorizontalAlignment="Left" Margin="103,318,0,0" VerticalAlignment="Top" Width="75" Click="IzmeniKorisnikaDugme_Click"/>

@@ -19,7 +19,8 @@
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="EVIDENCIJA PRODAJE" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="358,316,-143,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Obrisi" HorizontalAlignment="Left" Margin="449,316,-234,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Dodaj" Name="DodajDugme" HorizontalAlignment="Left" Margin="460,316,-245,0" VerticalAlignment="Top" Width="75" Click="DodajDugme_Click"/>
+        <Button Content="Obrisi" HorizontalAlignment="Left" Margin="551,316,-336,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Povratak" HorizontalAlignment="Left" Margin="640,316,-425,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
