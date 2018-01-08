@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_64_2017_GUI.Prozori"
         mc:Ignorable="d"
-        Title="SalonProzor" Height="329.323" Width="626.766">
-    <Grid Margin="10,0,0,4">
-        <DataGrid HorizontalAlignment="Left" Height="192" Margin="-10,58,0,0" VerticalAlignment="Top" Width="615"
+        Title="SalonProzor" Height="329.323" Width="629.766">
+    <Grid Margin="10,0,2,4">
+        <DataGrid HorizontalAlignment="Left" Height="192" Margin="-10,58,0,0" VerticalAlignment="Top" Width="620"
               ItemsSource="{Binding ListaNamestaja}" SelectedItem="{Binding IzabraniNamestaj, UpdateSourceTrigger=PropertyChanged}"
                   SelectedIndex="{Binding IzabraniIndex, UpdateSourceTrigger=PropertyChanged}"
               AutoGenerateColumns="False"  Name="dataGrid1" SelectionMode="Single" IsReadOnly="True">
@@ -20,21 +20,24 @@
                 <DataGridTemplateColumn Header="" Width="103">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button  x:Name="buttonAdd" Content="Ubaci" Margin="3" MinWidth="30" Click="DodajUKorpu_Click"/>
+                            <Button  x:Name="buttonAdd" Content="Ubaci" Margin="3" MinWidth="10" Width="65" Click="DodajUKorpu_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Name="OtvoriKorpu" Content="Korpa" HorizontalAlignment="Left" Margin="510,263,0,0" VerticalAlignment="Top" Width="75" Click="OtvoriKorpu_Click"/>
-        <Button Name="DodajNamestaj" Content="Dodaj" HorizontalAlignment="Left" Margin="10,265,0,0" VerticalAlignment="Top" Width="75" Click="DodajNamestaj_Click"/>
-        <Button Name="IzmeniNamestaj" Content="Izmeni" HorizontalAlignment="Left" Margin="90,265,0,0" VerticalAlignment="Top" Width="75" Click="IzmeniNamestaj_Click"/>
-        <Button Name="ObrisiNamestaj" Content="Obrisi" HorizontalAlignment="Left" Margin="170,265,0,0" VerticalAlignment="Top" Width="75" Click="ObrisiNamestaj_Click"/>
-        <Button Name="SviKorisnici" Content="Korisnici" HorizontalAlignment="Left" Margin="430,263,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.653,0.636" Click="SviKorisnici_Click"/>
+        <Button Name="OtvoriKorpu" Content="Korpa" HorizontalAlignment="Left" Margin="503,263,0,0" VerticalAlignment="Top" Width="64" Click="OtvoriKorpu_Click"/>
+        <Button Name="DodajNamestaj" Content="Dodaj" HorizontalAlignment="Left" Margin="20,265,0,0" VerticalAlignment="Top" Width="65" Click="DodajNamestaj_Click"/>
+        <Button Name="IzmeniNamestaj" Content="Izmeni" HorizontalAlignment="Left" Margin="90,265,0,0" VerticalAlignment="Top" Width="65" Click="IzmeniNamestaj_Click"/>
+        <Button Name="ObrisiNamestaj" Content="Obrisi" HorizontalAlignment="Left" Margin="160,265,0,0" VerticalAlignment="Top" Width="65" Click="ObrisiNamestaj_Click"/>
+        <Button Name="SviKorisnici" Content="Korisnici" HorizontalAlignment="Left" Margin="363,263,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0.653,0.636" Click="SviKorisnici_Click"/>
         <Label Content="  KATALOG &#xD;&#xA;NAMESTAJA" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="85"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="378,14,0,0" TextWrapping="Wrap" Text="Pretraga..." VerticalAlignment="Top" Width="109"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="378,15,0,0" TextWrapping="Wrap" Text="Pretraga..." VerticalAlignment="Top" Width="109"/>
         <ComboBox HorizontalAlignment="Left" Height="23" Margin="274,15,0,0" VerticalAlignment="Top" Width="99"/>
         <Label Content="Pretraga po tipu:" HorizontalAlignment="Left" Margin="170,12,0,0" VerticalAlignment="Top"/>
+        <Button Content="Pretrazi" HorizontalAlignment="Left" Margin="492,15,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Prodaja" HorizontalAlignment="Left" Margin="433,263,0,0" VerticalAlignment="Top" Width="65"/>
+        <Button Content="Akcija" HorizontalAlignment="Left" Margin="293,263,0,0" VerticalAlignment="Top" Width="65"/>
 
     </Grid>
 </Window>

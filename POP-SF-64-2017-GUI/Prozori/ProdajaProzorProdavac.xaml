@@ -1,11 +1,11 @@
-﻿<Window x:Class="POP_SF_64_2017_GUI.Prozori.ProdajaProzor"
+﻿<Window x:Class="POP_SF_64_2017_GUI.Prozori.ProdajaProzorProdavac"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_64_2017_GUI.Prozori"
         mc:Ignorable="d"
-        Title="ProdajaProzor" Height="386.842" Width="769.302">
+        Title="ProdajaProzorProdavac" Height="365.413" Width="769.175">
     <Grid HorizontalAlignment="Left" Width="290">
         <DataGrid HorizontalAlignment="Left" Height="231" VerticalAlignment="Top" Width="761" Margin="0,51,-471,0">
             <DataGrid.Columns>
@@ -19,9 +19,8 @@
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="EVIDENCIJA PRODAJE" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Button Content="Dodaj" Name="DodajDugme" HorizontalAlignment="Left" Margin="21,316,0,0" VerticalAlignment="Top" Width="75" Click="DodajDugme_Click" RenderTransformOrigin="-3.973,-0.045"/>
-        <Button Content="Obriši" HorizontalAlignment="Left" Margin="181,316,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Povratak" HorizontalAlignment="Left" Margin="655,316,-440,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Izmeni" Name="IzmeniDugme" HorizontalAlignment="Left" Margin="101,316,0,0" VerticalAlignment="Top" Width="75" Click="IzmeniDugme_Click"/>
+        <Button Content="Povratak" HorizontalAlignment="Left" Margin="654,299,-439,0" VerticalAlignment="Top" Width="75"/>
+
+
     </Grid>
 </Window>

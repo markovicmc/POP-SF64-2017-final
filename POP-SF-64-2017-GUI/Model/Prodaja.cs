@@ -18,9 +18,13 @@ namespace POP_SF_64_2017_GUI.Model
             private String kupac;
             private int brojRacuna;
             private int ukupnaCena;
+            public const double PDV = 0.02;
             private Boolean obrisan;
             private int uslugaID;
            // private Usluga usluga;
+
+               //da li treba da ovde pisemo one konstruktore kao sto smo u ostalim? Nece da mi prosledi neke stvari
+               //jer kaze da Prodaja ne prihvata argumente 
 
             public int ID
             {

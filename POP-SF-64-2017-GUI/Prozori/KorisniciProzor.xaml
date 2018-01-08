@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_64_2017_GUI.Prozori"
         mc:Ignorable="d"
-        Title="KorisniciProzor" Height="396" Width="482.6">
-    <Grid Margin="0,0,36,0">
-        <DataGrid HorizontalAlignment="Left" Height="256" Margin="0,38,-36,0" VerticalAlignment="Top" Width="475"
+        Title="KorisniciProzor" Height="396" Width="484.6">
+    <Grid Margin="0,0,2,0">
+        <DataGrid HorizontalAlignment="Left" Height="256" Margin="0,38,-31,0" VerticalAlignment="Top" Width="476"
                   ItemsSource="{Binding Korisnici}" SelectedItem="{Binding SelektovanKorisnik}"
                     AutoGenerateColumns="False"  SelectionMode="Single" IsReadOnly="True">
             <DataGrid.Columns>

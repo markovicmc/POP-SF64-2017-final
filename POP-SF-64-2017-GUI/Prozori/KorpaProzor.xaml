@@ -5,33 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_64_2017_GUI.Prozori"
         mc:Ignorable="d"
-        Title="KorpaProzor" Height="333.835" Width="429.387">
-    <Grid Margin="0,0,0,1" HorizontalAlignment="Left" Width="441">
-        <DataGrid HorizontalAlignment="Left" Height="192" VerticalAlignment="Top" Width="421"
+        Title="KorpaProzor" Height="337.6" Width="605.917">
+    <Grid Margin="0,0,0,1" HorizontalAlignment="Left" Width="419">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid HorizontalAlignment="Left" Height="192" VerticalAlignment="Top" Width="599"
               ItemsSource="{Binding ListaKupovine}" SelectedItem="{Binding IzabraniNamestaj, UpdateSourceTrigger=PropertyChanged}"
                   SelectedIndex="{Binding IzabraniIndex, UpdateSourceTrigger=PropertyChanged}"
-              AutoGenerateColumns="False"  Name="dataGrid1" SelectionMode="Single" IsReadOnly="True" Margin="0,53,0,0">
+              AutoGenerateColumns="False"  Name="dataGrid1" SelectionMode="Single" IsReadOnly="True" Margin="0,53,-180,0" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="80" Header="Ime" Binding="{Binding Naziv}" />
                 <DataGridTextColumn Header="Cena" Width="80" Binding="{Binding Cena}" />
                 <DataGridTextColumn Header="Kolicina" Width="80" Binding="{Binding Kolicina}" />
-                <DataGridTextColumn Width="80" Header="Akcija" Binding="{Binding Akcija}" />
-                <DataGridTemplateColumn Header="Dodatna usluga" Width="100">
+                <DataGridTextColumn Width="130" Header="Akcija" Binding="{Binding Akcija}" />
+                
+                <DataGridTemplateColumn Header="Dodatna usluga" Width="115">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button  x:Name="buttonAdd" Content="Izbaci" Margin="3" MinWidth="30" Click="DodajUKorpu_Click"/>
+                            <Button  x:Name="buttonAdd" Content="Izbaci" Margin="3" MinWidth="30" Width="65" Click="DodajUKorpu_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                
+                <DataGridTemplateColumn Width="115"/>
+                
             </DataGrid.Columns>
         </DataGrid>
-        <Button Name="Kupi" Content="Kupi" HorizontalAlignment="Left" Margin="132,271,0,0" VerticalAlignment="Top" Width="75" Click="Kupi_Click" RenderTransformOrigin="1.267,0.364"/>
-        <Button Name="Nastavi" Content="Nastavi" HorizontalAlignment="Left" Margin="253,272,0,0" VerticalAlignment="Top" Width="75" Click="Nastavi_Click"/>
-        <Button Name="Odustani" Content="Odustani" HorizontalAlignment="Left" Margin="333,271,0,0" VerticalAlignment="Top" Width="75" Click="Odustani_Click"/>
-        <Label Content="Suma:" HorizontalAlignment="Left" Margin="10,267,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.043,0.327"/>
+        <Button Name="Kupi" Content="Kupi" HorizontalAlignment="Left" Margin="132,271,0,0" VerticalAlignment="Top" Width="49" Click="Kupi_Click" RenderTransformOrigin="1.267,0.364" Height="22"/>
+        <Button Name="Nastavi" Content="Nastavi kupovinu" HorizontalAlignment="Left" Margin="325,272,-5,0" VerticalAlignment="Top" Width="99" Click="Nastavi_Click" Height="22" Grid.ColumnSpan="2"/>
+        <Button Name="Odustani" Content="Odustani" HorizontalAlignment="Left" Margin="10,271,-70,0" VerticalAlignment="Top" Width="60" Click="Odustani_Click" Height="22" Grid.Column="1"/>
+        <Label Content="Suma:" HorizontalAlignment="Left" Margin="10,267,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.043,0.327" Height="26" Width="42"/>
         <Label Name="suma" Content="" HorizontalAlignment="Left" Margin="71,219,0,0" VerticalAlignment="Top" Width="79" Height="26"/>
         <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Margin="57,271,0,0"/>
-        <Label Content="KORPA" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.583,0.038"/>
+        <Label Content="KORPA" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.583,0.038" Height="26" Width="48"/>
 
     </Grid>
 </Window>

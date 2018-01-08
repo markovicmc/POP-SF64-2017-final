@@ -1,28 +1,27 @@
-1. Combobox za tip namestaja
-2. Kolicina da se vidi
-3. Obrisi - provera pitanje
-4. Napravi za svaki posebno da moze CRUD/prozore
-5. Napravi listing akcija i da svaka moze pojedinacno da se obrise
-6. Automatski se generise ID, to ne treba nikome da bude vidljivo
-7. 20% popusta i validacija
-
-1. Objekat u objektu u Modelu je dozvoljen samo uz xml ignore
-2. Brisanje iz DataGrida tako da nestanu i kolone i redovi 
-3. Stavimo i namestaj i Dodatnu uslugu kao stavke DG u onda cemo moci da izlistamo oba istovremeno iz tog DG
-4. Kolicina namestaja (ima li ga?)
-. Akcija je l istekla ili ne
-. Zakaciti listenere na observable collectione da detektuju promene
+* Objekat u objektu u Modelu je dozvoljen samo uz xml ignore
 
 
-*Obrisi korisnika, namestaj...
+0. Baza odmah izbacuje da admin1 postoji
 
-Tamara sama:
+1. Imam listu stvari koje su u korpi (Salon/listaZaProdaju)
+Kupim ih (listaKupljenih) cuva se u bazi i skida sa stanja
+ListaKupljenih mi se prosledjuje i za Prodaju i Racun 
 
-1. Prodaja model, prozor
-2. Racun model, prozor?
-3. Sortiranje proveriti
-4. Dodati labelu za procente u popust i odraditi validaciju
-5. Akcija
-6. Akcija i DatePickeri
-7. Usluga
+2. Brisanje Namestaja
+	Korisnika
+	Tipa Namestaja
+
+
+3. Baza da se uveze kako treba
+
+4. Sve da se prosledjuje po IDu - jedinstveni identifikator za objekat
+
+5. Obavezno uraditi pretragu po tipu i po prvom slovu(?)
+
+6. Ne radi binding kod izmene/unosa tipa namestaja
+
+7. Da racuna sumu u korpi
+
+8. Kako namestiti da combobox vuce Tipove Namestaja iz baze? 
+	I combobox za dodatne usluge da se ubaci u polje? 
 

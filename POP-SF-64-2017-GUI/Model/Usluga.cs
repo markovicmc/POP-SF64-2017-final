@@ -13,7 +13,6 @@ namespace POP_SF_64_2017_GUI.Model
 
         private int id;
         private string naziv;
-        private int cena;
         private bool obrisan;
 
         public int ID
@@ -36,16 +35,7 @@ namespace POP_SF_64_2017_GUI.Model
             }
         }
 
-        public int Cena
-        {
-            get { return cena; }
-            set
-            {
-                cena = value;
-                OnPropertyChanged("Cena");
-            }
-        }
-
+       
         public bool Obrisan
         {
             get { return obrisan; }
@@ -62,7 +52,6 @@ namespace POP_SF_64_2017_GUI.Model
             {
                 id = ID,
                 naziv = Naziv,
-                cena = Cena,
                 obrisan = Obrisan
             };
         }

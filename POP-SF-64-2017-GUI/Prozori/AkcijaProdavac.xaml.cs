@@ -15,24 +15,13 @@ using System.Windows.Shapes;
 namespace POP_SF_64_2017_GUI.Prozori
 {
     /// <summary>
-    /// Interaction logic for AkcijaProzor.xaml
+    /// Interaction logic for AkcijaProdavac.xaml
     /// </summary>
-    public partial class AkcijaProzor : Window
+    public partial class AkcijaProdavac : Window
     {
-        public AkcijaProzor()
+        public AkcijaProdavac()
         {
             InitializeComponent();
-        }
-
-        private void btnSacuvaj(object sender, RoutedEventArgs e)
-        {
-           
-        }
-
-        private void btnPovratak(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-            
         }
     }
 }

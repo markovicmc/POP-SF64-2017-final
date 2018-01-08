@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_64_2017_GUI.Prozori"
         mc:Ignorable="d"
-        Title="Salon" Height="382.095" Width="521.291">
-    <Grid Margin="10,0,2,4">
-        <DataGrid HorizontalAlignment="Left" Height="209" Margin="-11,81,-3,0" VerticalAlignment="Top" Width="515"
+        Title="Salon" Height="357.095" Width="622.291">
+    <Grid Margin="10,0,2,0">
+        <DataGrid HorizontalAlignment="Left" Height="224" Margin="-10,57,0,0" VerticalAlignment="Top" Width="612"
               ItemsSource="{Binding ListaNamestaja}" SelectedItem="{Binding IzabraniNamestaj, UpdateSourceTrigger=PropertyChanged}"
                   SelectedIndex="{Binding IzabraniIndex, UpdateSourceTrigger=PropertyChanged}"
               AutoGenerateColumns="False"  Name="dataGrid1" SelectionMode="Single" IsReadOnly="True">
@@ -17,22 +17,22 @@
                 <DataGridTextColumn Width="103" Header="Kolicina" Binding="{Binding Kolicina}" />
                 <DataGridTextColumn Width="103" Header="Akcija" Binding="{Binding Akcija}" />
                 <DataGridTextColumn Width="101" Header="Tip" Binding="{Binding Tip}" />
-                <DataGridTemplateColumn Header="" Width="50">
+                <DataGridTemplateColumn Header="" Width="103" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button  x:Name="buttonAdd" Content="Ubaci" Margin="3" MinWidth="30" Click="ButtonAddToShop_Click"/>
+                            <Button  x:Name="buttonAdd" Content="Ubaci" Margin="3" MinWidth="30" Width ="65" Click="ButtonAddToShop_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Name="OtvoriKorpu" Content="Korpa" HorizontalAlignment="Left" Margin="20,311,0,0" VerticalAlignment="Top" Width="75" Click="OtvoriKorpu_Click" RenderTransformOrigin="-1.928,0.608"/>
-        <Button x:Name="OtvoriKorpu_Copy" Content="Povratak" HorizontalAlignment="Left" Margin="416,311,0,0" VerticalAlignment="Top" Width="75" Click="Zatvori"/>
-        <Label Content="  KATALOG &#xD;&#xA;NAMESTAJA" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="85"/>
-        <TextBox Name="tbPretraga" HorizontalAlignment="Left" Height="23" Margin="308,15,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="109"/>
-        <ComboBox Name="cbTipPretrage" HorizontalAlignment="Left" Height="23" Margin="204,15,0,0" VerticalAlignment="Top" Width="99"/>
-        <Label Content="Pretraga po tipu:" HorizontalAlignment="Left" Margin="100,12,0,0" VerticalAlignment="Top"/>
-        <Button Name="PretragaDugme" Content="Pretrazi" HorizontalAlignment="Left" Margin="422,16,0,0" VerticalAlignment="Top" Width="75" Click="PretragaDugme_Click"/>
-        <Button Name="PonistiDugme" Content="Ponisti" HorizontalAlignment="Left" Margin="422,50,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="OtvoriKorpu" Content="Korpa" HorizontalAlignment="Left" Margin="90,295,0,0" VerticalAlignment="Top" Width="75" Click="OtvoriKorpu_Click" RenderTransformOrigin="-1.928,0.608"/>
+        <Button x:Name="OtvoriKorpu_Copy" Content="Povratak" HorizontalAlignment="Left" Margin="482,295,0,0" VerticalAlignment="Top" Width="75" Click="Zatvori"/>
+        <Label Content="  KATALOG &#xD;&#xA;NAMESTAJA" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="85"/>
+        <TextBox Name="tbPretraga" HorizontalAlignment="Left" Height="23" Margin="368,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="109"/>
+        <ComboBox Name="cbTipPretrage" HorizontalAlignment="Left" Height="23" Margin="264,22,0,0" VerticalAlignment="Top" Width="99"/>
+        <Label Content="Pretraga po tipu:" HorizontalAlignment="Left" Margin="160,20,0,0" VerticalAlignment="Top"/>
+        <Button Name="PretragaDugme" Content="Pretrazi" HorizontalAlignment="Left" Margin="482,22,0,0" VerticalAlignment="Top" Width="75" Click="PretragaDugme_Click"/>
+        <Button Content="Prodaja" HorizontalAlignment="Left" Margin="10,295,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

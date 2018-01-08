@@ -5,22 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_64_2017_GUI.Prozori"
         mc:Ignorable="d"
-        Title="DodajNamestajProzor" Height="300" Width="300">
-    <Grid>
+        Title="DodajNamestajProzor" Height="291" Width="300">
+    <Grid Margin="0,0,0,-1">
         <Label Content="Naziv:" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.552,-0.027"/>
         <Label Content="Sifra:" HorizontalAlignment="Left" Margin="33,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.143,0.42"/>
         <Label Content="Cena:" HorizontalAlignment="Left" Margin="33,72,0,0" VerticalAlignment="Top"/>
         <Label Content="Kolicina:" HorizontalAlignment="Left" Margin="33,103,0,0" VerticalAlignment="Top"/>
-        <Label Content="Tip:" HorizontalAlignment="Left" Margin="33,134,0,0" VerticalAlignment="Top"/>
-        <Label Content="Akcija" HorizontalAlignment="Left" Margin="34,165,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.566,1.378"/>
+        <Label Content="Akcija:" HorizontalAlignment="Left" Margin="34,169,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.566,1.378"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="127,10,0,0" TextWrapping="Wrap" Text="{Binding Namestaj.Naziv, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="127,41,0,0" TextWrapping="Wrap" Text="{Binding Namestaj.Sifra, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="127,72,0,0" TextWrapping="Wrap" Text="{Binding Cena, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="127,103,0,0" TextWrapping="Wrap" Text="{Binding Namestaj.Kolicina, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <Button Name="DodajNamestaj" Content="Sacuvaj" HorizontalAlignment="Left" Margin="49,234,0,0" VerticalAlignment="Top" Width="75" Click="DodajNamestaj_Click"/>
-        <Button Name="Odustani" Content="Odustani" HorizontalAlignment="Left" Margin="172,234,0,0" VerticalAlignment="Top" Width="75" Click="Odustani_Click"/>
-        <Button Name="DodajAkciju" Content="Dodaj akciju" HorizontalAlignment="Left" Margin="127,169,0,0" VerticalAlignment="Top" Width="75" Click="DodajAkciju_Click"/>
-        <ComboBox HorizontalAlignment="Left" Margin="127,138,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Name="DodajNamestaj" Content="Sacuvaj promene" HorizontalAlignment="Left" Margin="34,222,0,0" VerticalAlignment="Top" Width="99" Click="DodajNamestaj_Click"/>
+        <Button Name="Odustani" Content="Odustani" HorizontalAlignment="Left" Margin="172,222,0,0" VerticalAlignment="Top" Width="75" Click="Odustani_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="127,137,0,0" TextWrapping="Wrap" Text="{Binding Namestaj.Kolicina, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Tip:" HorizontalAlignment="Left" Margin="34,134,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="127,173,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

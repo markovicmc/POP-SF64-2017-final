@@ -20,25 +20,50 @@ namespace POP_SF_64_2017_GUI.Prozori
     /// </summary>
     public partial class ProdajaProzor : Window
     {
-        public static bool dodaj;
+        public static bool dodaj; //indikator za izmenu polja
+                                  // private List<Prodaja> listaProdaja; //inicijalizujemo listu elemenata tipa Prodaja
 
         public ProdajaProzor()
         {
             InitializeComponent();
+            DataContext = this;
         }
+
+        // public Prodaja IzabranaProdaja { get; set; }
+
+
+
+
+        //public List<Prodaja> ListaProdaja
+        //{
+        //    get
+        //    {
+        //        return listaProdaja;
+        //    }
+        //    set {
+        //        listaProdaja = value;
+        //        OnPropertyChanged("ListaProdaja");            }
+        //}
 
         private void DodajDugme_Click(object sender, RoutedEventArgs e)
         {
-            Prodaja p = new Prodaja();
-            dodaj = false;
-            DodajProdajaProzor dodajProdaju = new DodajProdajaProzor(p);
-            dodajProdaju.ShowDialog();
-            if (dodaj)
-            {
-                ListaProdaja.Add(p);
-                Refresh(); 
-            }
+            //            Prodaja p = new Prodaja();
+            //            dodaj = false;
+            //            DodajProdajaProzor dodajProdaju = new DodajProdajaProzor(p);
+            //            dodajProdaju.ShowDialog();
+            //            if (dodaj)
+            //            {
+            //                //ListaProdaja.Add(p); Ova lista prodaja bi trebala da bude lista kupljenih
+            //                Refresh(); 
+            //            }
+        }
 
+        private void IzmeniDugme_Click(object sender, RoutedEventArgs e)
+        {
+            //                if(IzabranaProdaja != null)
+            //            {
+            //                Prodaja p = new Prodaja(IzabranaProdaja);
+            //            }
         }
     }
 }

@@ -1,0 +1,58 @@
+Lista odradjenih stvari
+
+GUI:
+
+1. Racun:
+ 
+Izgled+
+Funkcionalnost-
+
+
+2. Salon Admin:
+
+Izgled+
+Funkcionalnost: Uraditi pretragu + combobox, prodaja - vodi na prodaju
+CRUD+
+
+3. Salon Prodavac:
+
+Izgled+
+Funkcionalnost: Pretraga + combobox
+Prodaja - vodi na prodaju
+
+4. Korpa:
+Izgled+
+Funkcionalnost: 
+
+Proveriti bindovanje,
+Kupi - skida sa stanja i pravi listu kupljenih proizvoda i cuva u bazu, zatim izbacuje racun
+Nastavi - vraca na Katalog
+Dodatna Usluga - regulisati combobox
+
+5. Prodaja Admin
+Izgled+
+Funkcionalnost:
+Dodatna usluga combobox
+CRUD-
+
+6. Prodaja Prodavac -
+
+7. Korisnici Prodavac
+
+8.DodajNamestajProzor
+
+Odraditi validaciju za tip - ako postoji u bazi, ne moze novi
+Akcija combobox treba da povuce postojece akcije iz liste akcija
+
+9. Akcija
+
+Izgled+
+Funkcionalnost-
+CRUD-
+
+
+
+
+
+
+
