@@ -18,10 +18,7 @@ ListaKupljenih mi se prosledjuje i za Prodaju i Racun
 
 5. Obavezno uraditi pretragu po tipu i po prvom slovu(?)
 
-6. Ne radi binding kod izmene/unosa tipa namestaja
-
 7. Da racuna sumu u korpi
 
 8. Kako namestiti da combobox vuce Tipove Namestaja iz baze? 
-	I combobox za dodatne usluge da se ubaci u polje? 
-
+	

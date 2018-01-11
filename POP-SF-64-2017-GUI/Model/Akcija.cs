@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace POP_SF_64_2017_GUI.Model
 {
     public class Akcija
     {
-        public static int ID = 0;
+       // [NotMapped]
+       // [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int ID { get; set; }
         public string Naziv { get; set; }
         public DateTime PocetakAkcije { get; set; }
         public DateTime KrajAkcije { get; set; }
@@ -34,7 +37,6 @@ namespace POP_SF_64_2017_GUI.Model
 
         public Akcija (string naziv, DateTime pocetakAkcije, DateTime krajAkcije, double popust, bool obrisano)
         {
-            ID++;
             Naziv = naziv;
             PocetakAkcije = pocetakAkcije;
             KrajAkcije = krajAkcije;
@@ -44,7 +46,11 @@ namespace POP_SF_64_2017_GUI.Model
 
         public override string ToString()
         {
-            return string.Format("{0} - {1}", PocetakAkcije.ToShortDateString(), KrajAkcije.ToShortDateString());
+            if (AkcijaPostoji)
+            {
+                return Naziv;
+            }
+            return "Nema";
         }
     }
 }

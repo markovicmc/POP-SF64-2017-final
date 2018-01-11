@@ -11,7 +11,7 @@ namespace POP_SF_64_2017_GUI.Model
         {
             public event PropertyChangedEventHandler PropertyChanged;
 
-            private int iD;
+            private int id;
             private String nazivProizvoda;
             private int kolicina;
             private DateTime datumProdaje;
@@ -28,10 +28,10 @@ namespace POP_SF_64_2017_GUI.Model
 
             public int ID
             {
-                get { return iD; }
+                get { return id; }
                 set
                 {
-                    iD = value;
+                    id = value;
                     OnPropertyChanged("ID");
                 }
             }

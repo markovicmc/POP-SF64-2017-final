@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,12 +10,27 @@ namespace POP_SF_64_2017_GUI.Model
    public class Namestaj
     {
         public int ID { get; set; }
+        
+        private int TipNamestajaId { get; set; }
         public string Naziv { get; set; }
         public string Sifra { get; set; }
         public double Cena { get; set; }
         public int Kolicina { get; set; }
         public string Tip { get; set; }
-        public Akcija Akcija { get; set; }
+        public int AkcijaId;
+
+        [NotMapped]
+        public Akcija Akcija {
+            get
+            {
+                foreach (var item in Database.Akcije)
+                {
+                    if (item.ID == AkcijaId)
+                        return item;
+                }
+                return new Akcija("", DateTime.MinValue, DateTime.MinValue, 0, false); //ne bi imalo nad cime da pozove ToString da nemamo objekat
+            }
+        }
 
         public bool Obrisano { get; set; }
 
@@ -31,7 +47,7 @@ namespace POP_SF_64_2017_GUI.Model
             Kolicina = n.Kolicina;
             Tip = n.Tip;
             Obrisano = n.Obrisano;
-            Akcija = n.Akcija;
+            AkcijaId = n.AkcijaId;
             ID = n.ID;
         }
 
@@ -45,8 +61,8 @@ namespace POP_SF_64_2017_GUI.Model
             Kolicina = kolicina;
             Tip = tip;
             Obrisano = obrisano;
-            if(akcijaPostoji)
-                Akcija = new Akcija(Naziv + "Akcija", DateTime.Now, DateTime.Now.AddMonths(1), 10, false);
+            //if(akcijaPostoji)
+               // Akcija = new Akcija(Naziv + "Akcija", DateTime.Now, DateTime.Now.AddMonths(1), 10, false);
 
         }
 
@@ -59,7 +75,7 @@ namespace POP_SF_64_2017_GUI.Model
             Kolicina = n.Kolicina;
             Tip = n.Tip;
             Obrisano = n.Obrisano;
-            Akcija = n.Akcija;
+            AkcijaId = n.AkcijaId;
             ID = n.ID;
         }
 

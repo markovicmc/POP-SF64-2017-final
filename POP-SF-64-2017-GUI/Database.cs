@@ -1,9 +1,11 @@
-﻿using POP_SF_64_2017_GUI.Model;
+﻿using POP_SF_64_2017_GUI.Baza;
+using POP_SF_64_2017_GUI.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 // To do: Napravi listu Namestaja, dodaj u konstruktor neki namestaj, DataGrid,
 // Dugme Korpa... 
@@ -14,18 +16,46 @@ namespace POP_SF_64_2017_GUI
 {
     public class Database
     {
-        public static List<string> TipoviNamestaja = new List<string>() { "SVE", "Kuhinja", "Spavaca soba", "Kupatilo" };
+        public static List<string> TipoviNamestaja
+        {
+            get
+            {
+                using (var unitOfWork = new Context())
+                {
+                    var TipoviNamestaja = new List<string>();
+                    foreach (var item in unitOfWork.TipoviNamestaja.ToList())
+                    {
+                        TipoviNamestaja.Add(item.Naziv);
+                    }
+                    return TipoviNamestaja;
+                }
+            }
+        }
+        public static List<Akcija> Akcije
+        {
+            get
+            {
+                using (var unitOfWork = new Context())
+                {
+                    return unitOfWork.Akcije.ToList();
+                }
+            }
+        }
         public static Dictionary<string, Korisnik> Korisnici;
 
         static Database()
         {
             Korisnici = new Dictionary<string, Korisnik>();
 
-            Korisnik k1 = new Korisnik(0, "Tamara", "Markovic", "admin", "admin", TipKorisnika.ADMINISTRATOR);
-            Korisnici[k1.Username] = k1;
+            using (var unitOfWork = new Context())
+            {
+                var tempList = unitOfWork.Korisnici.ToList();
 
-            Korisnik k2 = new Korisnik(1, "Prodavac", "Proda", "prod", "prod", TipKorisnika.PRODAVAC);
-            Korisnici[k2.Username] = k2;
+                foreach (var item in tempList)
+                {
+                    Korisnici[item.Username] = item;
+                }
+            }
         }
     }
 } 

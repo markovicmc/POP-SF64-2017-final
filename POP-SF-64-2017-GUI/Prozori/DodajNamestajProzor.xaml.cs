@@ -20,12 +20,21 @@ namespace POP_SF_64_2017_GUI.Prozori
     /// </summary>
     public partial class DodajNamestajProzor : Window
     {
-
+        public static int AkcijaId;
         public DodajNamestajProzor(Namestaj n)
         {
             InitializeComponent();
             DataContext = this;
             Namestaj = n; //ako otvaramo kada kliknemo na edit, moramo da prosledimo selektovani namestaj
+
+            List<string> listaZaCb = new List<string>();
+            foreach (var item in Database.Akcije)
+            {
+                listaZaCb.Add(item.ID + ": " + item.Naziv);
+            }
+            cbAkcija.ItemsSource = listaZaCb;
+
+            cbTip.ItemsSource = Database.TipoviNamestaja;
         }
         public Namestaj Namestaj{ get; set; }
         public string Cena {
@@ -45,8 +54,36 @@ namespace POP_SF_64_2017_GUI.Prozori
 
         private void DodajNamestaj_Click(object sender, RoutedEventArgs e)
         {
-            SalonProzor.dodaj = true;
-            this.Close();
+            //validacije da je sve popunjeno, onda baza nece pucati jer polje nije null.. ako ga nema, npr neki string nije obavezan, staviti = ""
+            if (string.IsNullOrEmpty(Namestaj.Naziv))
+            {
+                MessageBox.Show("Ime nije popunjeno.");
+            }
+            else if (string.IsNullOrEmpty(Namestaj.Sifra))
+            {
+                MessageBox.Show("Sifra nije popunjeno.");
+            }
+            else if(this.cbTip.SelectedIndex == -1)
+            {
+                MessageBox.Show("Izaberite tip namestaja");
+            }
+            else 
+            {
+                if(this.cbAkcija.SelectedIndex == -1)
+                {
+                    Namestaj.AkcijaId = -1;
+                }
+                else
+                {
+                    Namestaj.AkcijaId = int.Parse(this.cbAkcija.SelectedValue.ToString().Split(':')[0]);
+                }
+
+                Namestaj.Tip = this.cbTip.SelectedValue.ToString();
+                SalonProzor.dodaj = true;
+                this.Close();
+            }
+
+            
         }
 
         private void Odustani_Click(object sender, RoutedEventArgs e)
@@ -54,10 +91,5 @@ namespace POP_SF_64_2017_GUI.Prozori
             this.Close();
         }
 
-        private void DodajAkciju_Click(object sender, RoutedEventArgs e)
-        {
-            DodajAkcijaProzor akcijaProzor = new DodajAkcijaProzor();
-            akcijaProzor.Show();
-        }
     }
 }

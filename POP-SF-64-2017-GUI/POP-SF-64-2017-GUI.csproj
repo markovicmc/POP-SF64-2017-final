@@ -64,15 +64,16 @@
     <Compile Include="Baza\DBConfiguration.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Model\Prodaja.cs" />
-    <Compile Include="Model\Racun.xaml.cs">
+    <Compile Include="Model\TipNamestaja.cs" />
+    <Compile Include="Prozori\DodajTipProzor.xaml.cs">
+      <DependentUpon>DodajTipProzor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prozori\Racun.xaml.cs">
       <DependentUpon>Racun.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Usluga.cs" />
-    <Compile Include="Prozori\Akcija.xaml.cs">
-      <DependentUpon>Akcija.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Prozori\AkcijaProdavac.xaml.cs">
-      <DependentUpon>AkcijaProdavac.xaml</DependentUpon>
+    <Compile Include="Prozori\AkcijaProzor.xaml.cs">
+      <DependentUpon>AkcijaProzor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Prozori\DodajAkcijaProzor.xaml.cs">
       <DependentUpon>DodajAkcijaProzor.xaml</DependentUpon>
@@ -104,6 +105,9 @@
     <Compile Include="Prozori\SalonProzor.xaml.cs">
       <DependentUpon>SalonProzor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Prozori\TipNamestajaProzor.xaml.cs">
+      <DependentUpon>TipNamestajaProzor.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -116,15 +120,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Model\Racun.xaml">
+    <Page Include="Prozori\DodajTipProzor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Prozori\Akcija.xaml">
+    <Page Include="Prozori\Racun.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Prozori\AkcijaProdavac.xaml">
+    <Page Include="Prozori\AkcijaProzor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,6 +169,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Prozori\SalonProzor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Prozori\TipNamestajaProzor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

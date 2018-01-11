@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_64_2017_GUI.Prozori"
         mc:Ignorable="d"
-        Title="Salon" Height="357.095" Width="622.291">
+        Title="Salon" Height="357.095" Width="622.291" WindowStartupLocation="CenterScreen">
     <Grid Margin="10,0,2,0">
         <DataGrid HorizontalAlignment="Left" Height="224" Margin="-10,57,0,0" VerticalAlignment="Top" Width="612"
               ItemsSource="{Binding ListaNamestaja}" SelectedItem="{Binding IzabraniNamestaj, UpdateSourceTrigger=PropertyChanged}"

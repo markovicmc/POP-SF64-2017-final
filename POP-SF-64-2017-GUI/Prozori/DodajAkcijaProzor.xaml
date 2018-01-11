@@ -11,14 +11,14 @@
         <Label Content="Datum pocetka:" HorizontalAlignment="Left" Margin="30,87,0,0" VerticalAlignment="Top"/>
         <Label Content="Datum kraja:" HorizontalAlignment="Left" Margin="30,118,0,0" VerticalAlignment="Top"/>
         <Label Content="Popust: " HorizontalAlignment="Left" Margin="30,149,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="126,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="136"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="126,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="64"/>
-        <Button Content="Povratak"  HorizontalAlignment="Left" Margin="202,204,0,0" VerticalAlignment="Top" Width="60"/>
-        <Button Content="Sacuvaj"  HorizontalAlignment="Left" Margin="126,204,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="1.532,0.365"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="126,58,0,0" TextWrapping="Wrap" Text="{Binding NovaAkcija.Naziv, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="136"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="126,151,0,0" TextWrapping="Wrap" Text="{Binding Popust, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="64"/>
+        <Button Name="PovratakDugme" Content="Povratak"  HorizontalAlignment="Left" Margin="202,204,0,0" VerticalAlignment="Top" Width="60" Click="PovratakDugme_Click"/>
+        <Button Name="SacuvajDugme" Content="Sacuvaj"  HorizontalAlignment="Left" Margin="126,204,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="1.532,0.365" Click="SacuvajDugme_Click"/>
         <Label Content="AKCIJA" HorizontalAlignment="Left" Margin="126,10,0,0" VerticalAlignment="Top"/>
         <Label Content="%" HorizontalAlignment="Left" Margin="190,151,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.3,0.538"/>
-        <DatePicker HorizontalAlignment="Left" Margin="126,92,0,0" VerticalAlignment="Top" Width="136"/>
-        <DatePicker HorizontalAlignment="Left" Margin="126,122,0,0" VerticalAlignment="Top" Width="136"/>
+        <DatePicker Name="dp1" HorizontalAlignment="Left" Margin="126,92,0,0" VerticalAlignment="Top" Width="136" SelectedDate="{Binding time1, UpdateSourceTrigger=PropertyChanged}"/>
+        <DatePicker Name="dp2" HorizontalAlignment="Left" Margin="126,122,0,0" VerticalAlignment="Top" Width="136" SelectedDate="{Binding time2, UpdateSourceTrigger=PropertyChanged}"/>
 
     </Grid>
 </Window>

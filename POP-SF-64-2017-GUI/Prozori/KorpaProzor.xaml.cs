@@ -21,6 +21,7 @@ namespace POP_SF_64_2017_GUI.Prozori
     /// </summary>
     public partial class KorpaProzor : Window, INotifyPropertyChanged
     {
+
         private List<Namestaj> listaNamestaja;
         public Namestaj IzabraniNamestaj { get; set; }
         public int IzabraniIndex { get; set; }
@@ -39,12 +40,24 @@ namespace POP_SF_64_2017_GUI.Prozori
 
         private double sumaCena;
 
+        public string SumaString { get { return sumaCena.ToString(); } }
+
+        void Sumiraj()
+        {
+            sumaCena = 0;
+            foreach (var item in ListaKupovine)
+            {
+                sumaCena += item.Cena;
+            }
+        }
+
         public KorpaProzor(List<Namestaj> l)
         {
             ListaKupovine = l;
             InitializeComponent();
             DataContext = this;
             Refresh();
+            Sumiraj();
         }
 
         private void Nastavi_Click(object sender, RoutedEventArgs e)
@@ -88,7 +101,7 @@ namespace POP_SF_64_2017_GUI.Prozori
             {
                 sumaCena += item.Cena;
             }
-            this.suma.Content = sumaCena.ToString();
+            this.tbSuma.Text = sumaCena.ToString();
         }
         #endregion
 
@@ -99,9 +112,9 @@ namespace POP_SF_64_2017_GUI.Prozori
                 ListaKupovine.RemoveAt(IzabraniIndex);
                 IzabraniIndex = -1;
                 Refresh();
+                Sumiraj();
             }
         }
 
-       
     }
 }

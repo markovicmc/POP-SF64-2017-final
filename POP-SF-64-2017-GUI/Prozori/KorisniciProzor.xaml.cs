@@ -47,6 +47,11 @@ namespace POP_SF_64_2017_GUI.Prozori
 
         private void IzmeniKorisnikaDugme_Click(object sender, RoutedEventArgs e)
         {
+            if(SelektovanKorisnik == null)
+            {
+                MessageBox.Show("Niste izabrali korisnika za izmenu.");
+                return;
+            }
             Korisnik k = new Korisnik(SelektovanKorisnik);
             dodaj = false;
             DodajKorisnikaProzor izmeniKorisnikaProzor = new DodajKorisnikaProzor(k);
@@ -56,7 +61,15 @@ namespace POP_SF_64_2017_GUI.Prozori
             {
                 SelektovanKorisnik.Zameni(k);
                 Refresh();
-                //sacuvati u bazu?
+                using(var unitOfWork = new Baza.Context())
+                {
+                    Korisnik izBaze = unitOfWork.Korisnici.Find(k.ID);
+                    if (k != null)
+                    {
+                        izBaze.Zameni(k);
+                        unitOfWork.SaveChanges();
+                    }
+                }
             }
         }
 
@@ -76,7 +89,13 @@ namespace POP_SF_64_2017_GUI.Prozori
             {
                 Database.Korisnici[k.Username] = k;
                 Refresh();
-                //sacuvati u bazu?
+                using (var unitOfWork = new Baza.Context())
+                {
+                    Korisnik izBaze = unitOfWork.Korisnici.Add(k);
+                    
+                    unitOfWork.SaveChanges();
+                    
+                }
             }
         }
 
@@ -115,6 +134,15 @@ namespace POP_SF_64_2017_GUI.Prozori
             {
                 if (Database.Korisnici.ContainsKey(SelektovanKorisnik.Username))
                 {
+                    using (var unitOfWork = new Baza.Context())
+                    {
+                        Korisnik izBaze = unitOfWork.Korisnici.Find(SelektovanKorisnik.ID);
+                        if(izBaze != null)
+                        {
+                            unitOfWork.Korisnici.Remove(izBaze);
+                            unitOfWork.SaveChanges();
+                        }
+                    }
                     Database.Korisnici.Remove(SelektovanKorisnik.Username);
                 }
                 Refresh();

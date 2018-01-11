@@ -1,0 +1,25 @@
+﻿<Window x:Class="POP_SF_64_2017_GUI.Prozori.TipNamestajaProzor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POP_SF_64_2017_GUI.Prozori"
+        mc:Ignorable="d"
+       Title="TipNamestajaProzor" Height="335.978" Width="425.188" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="TIPOVI NAMEŠTAJA" HorizontalAlignment="Left" Margin="26,20,0,0" VerticalAlignment="Top"/>
+        <DataGrid SelectedItem="{Binding SelektovanTip}" HorizontalAlignment="Left" Height="183" Margin="0,61,0,0" VerticalAlignment="Top" Width="417"
+              ItemsSource= "{Binding ListaTipova, UpdateSourceTrigger=PropertyChanged}"  
+              AutoGenerateColumns="False"  Name="dataGrid1" SelectionMode="Single" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="400" Header="Ime" Binding="{Binding Naziv}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Button Name="DodajDugme" Content="Dodaj" HorizontalAlignment="Left" Margin="10,265,0,0" VerticalAlignment="Top" Width="75" Click="DodajDugme_Click"/>
+        <Button Name="ObrisiDugme" Content="Obriši"  HorizontalAlignment="Left" Margin="170,265,0,0" VerticalAlignment="Top" Width="75" Click="ObrisiDugme_Click"/>
+        <Button Name="PovratakDugme" Content="Povratak"  HorizontalAlignment="Left" Margin="332,265,0,0" VerticalAlignment="Top" Width="75" Click="PovratakDugme_Click"/>
+
+    </Grid>
+</Window>

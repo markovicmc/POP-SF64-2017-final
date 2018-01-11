@@ -15,14 +15,18 @@ namespace POP_SF_64_2017_GUI.Baza
             Configuration.LazyLoadingEnabled = false;
             System.Data.Entity.Database.SetInitializer(new CreateDatabaseIfNotExists<Context>());
 
-            //if (Korisnici.Find("admin") == null)
-            //{
-            //    Korisnici.Add(new Korisnik(0, "admin", "admin", "admin", "admin", TipKorisnika.ADMINISTRATOR));
-            //    SaveChanges();
-            //}
+            if (Korisnici.Find(1) == null)
+            {
+                Korisnici.Add(new Korisnik(1, "admin", "admin", "admin", "admin", TipKorisnika.ADMINISTRATOR));
+                SaveChanges();
+            }
         }
-        public DbSet<Namestaj> Namestaj { get; set; }
-        public DbSet<Korisnik> Korisnici { get; set; }
 
+       
+
+        public DbSet<Namestaj> Namestaji { get; set; }
+        public DbSet<Korisnik> Korisnici { get; set; }
+        public DbSet<Akcija> Akcije { get; set; }
+        public DbSet<TipNamestaja> TipoviNamestaja { get; set; }
     }
 }

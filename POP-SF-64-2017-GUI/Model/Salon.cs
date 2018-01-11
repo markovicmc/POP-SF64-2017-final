@@ -1,40 +1,172 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace POP_SF_64_2017_GUI.Model
 {
-    public class Salon
+    public class Salon : INotifyPropertyChanged
     {
-        public int ID { get; set; }
-        public string Naziv { get; set; }
-        public string Adresa { get; set; }
-        public string Telefon { get; set; }
-        public string Email { get; set; }
-        public string Website { get; set; }
-        public string PIB { get; set; }
-        public string MaticniBr { get; set; }
-        public string ZiroRacun { get; set; }
+        private int id;
+        private string naziv;
+        private string adresa;
+        private string telefon;
+        private string email;
+        private string adresaInternetSajta;
+        private int pib;
+        private string jmbg;
+        private string brojZiroRacuna;
+        private bool obrisan;
 
 
-        public Salon()
+        public int Id
         {
+            get { return id; }
+            set
+            {
+                id = value;
+                OnPropertyChanged("Id");
+            }
+        }
+
+
+
+        public string Naziv
+        {
+            get { return naziv; }
+            set
+            {
+                naziv = value;
+                OnPropertyChanged("Naziv");
+            }
+        }
+
+
+
+        public string Adresa
+        {
+            get { return adresa; }
+            set
+            {
+                adresa = value;
+                OnPropertyChanged("Adresa");
+            }
+        }
+
+
+
+        public string Telefon
+        {
+            get { return telefon; }
+            set
+            {
+                telefon = value;
+                OnPropertyChanged("Telefon");
+            }
+        }
+
+
+
+        public string Email
+        {
+            get { return email; }
+            set
+            {
+                email = value;
+                OnPropertyChanged("Email");
+            }
 
         }
 
-        public Salon(string naziv, string adresa, string telefon, string email, string website, string pib, string maticniBr, string ziroRacun)
+
+
+        public string AdresaInternetSajta
         {
-            Naziv = naziv;
-            Adresa = adresa;
-            Telefon = telefon;
-            Email = email;
-            Website = website;
-            PIB = pib;
-            MaticniBr = maticniBr;
-            ZiroRacun = ziroRacun;
+            get { return adresaInternetSajta; }
+            set
+            {
+                adresaInternetSajta = value;
+                OnPropertyChanged("AdresaInternetSajta");
+            }
         }
+
+
+
+        public int PIB
+        {
+            get { return pib; }
+            set
+            {
+                pib = value;
+                OnPropertyChanged("PIB");
+            }
+        }
+
+
+
+        public string JMBG
+        {
+            get { return jmbg; }
+            set
+            {
+                jmbg = value;
+                OnPropertyChanged("JMBG");
+            }
+        }
+
+
+
+        public string BrojZiroRacuna
+        {
+            get { return brojZiroRacuna; }
+            set
+            {
+                brojZiroRacuna = value;
+                OnPropertyChanged("BrojZiroRacuna");
+            }
+        }
+
+
+
+        public bool Obrisan
+        {
+            get { return obrisan; }
+            set
+            {
+                obrisan = value;
+                OnPropertyChanged("Obrisan");
+            }
+        }
+
+
+        public object Clone()
+        {
+            return new Salon()
+            {
+                Id = id,
+                Naziv = naziv,
+                Adresa = adresa,
+                Telefon = telefon,
+                Email = email,
+                AdresaInternetSajta = adresaInternetSajta,
+                PIB = pib,
+                JMBG = jmbg,
+                BrojZiroRacuna = brojZiroRacuna,
+                Obrisan = obrisan
+            };
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+
     }
-
 }

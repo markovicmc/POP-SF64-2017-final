@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_64_2017_GUI.Prozori"
         mc:Ignorable="d"
-        Title="SalonProzor" Height="329.323" Width="629.766">
+        Title="SalonProzor" Height="329.323" Width="629.766" WindowStartupLocation="CenterScreen">
     <Grid Margin="10,0,2,4">
         <DataGrid HorizontalAlignment="Left" Height="192" Margin="-10,58,0,0" VerticalAlignment="Top" Width="620"
               ItemsSource="{Binding ListaNamestaja}" SelectedItem="{Binding IzabraniNamestaj, UpdateSourceTrigger=PropertyChanged}"
@@ -32,12 +32,13 @@
         <Button Name="ObrisiNamestaj" Content="Obrisi" HorizontalAlignment="Left" Margin="160,265,0,0" VerticalAlignment="Top" Width="65" Click="ObrisiNamestaj_Click"/>
         <Button Name="SviKorisnici" Content="Korisnici" HorizontalAlignment="Left" Margin="363,263,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0.653,0.636" Click="SviKorisnici_Click"/>
         <Label Content="  KATALOG &#xD;&#xA;NAMESTAJA" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="85"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="378,15,0,0" TextWrapping="Wrap" Text="Pretraga..." VerticalAlignment="Top" Width="109"/>
-        <ComboBox HorizontalAlignment="Left" Height="23" Margin="274,15,0,0" VerticalAlignment="Top" Width="99"/>
+        <TextBox Name="tbPretraga" HorizontalAlignment="Left" Height="23" Margin="378,15,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="109"/>
+        <ComboBox Name="cbTipPretrage" HorizontalAlignment="Left" Height="23" Margin="274,15,0,0" VerticalAlignment="Top" Width="99"/>
         <Label Content="Pretraga po tipu:" HorizontalAlignment="Left" Margin="170,12,0,0" VerticalAlignment="Top"/>
-        <Button Content="Pretrazi" HorizontalAlignment="Left" Margin="492,15,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Pretrazi" HorizontalAlignment="Left" Margin="492,15,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Button Content="Prodaja" HorizontalAlignment="Left" Margin="433,263,0,0" VerticalAlignment="Top" Width="65"/>
-        <Button Content="Akcija" HorizontalAlignment="Left" Margin="293,263,0,0" VerticalAlignment="Top" Width="65"/>
+        <Button Content="Akcija" HorizontalAlignment="Left" Margin="293,263,0,0" VerticalAlignment="Top" Width="65" Click="Button_Click"/>
+        <Button Name="OtvoriTipoviDugme" Content="Tipovi" HorizontalAlignment="Left" Margin="230,265,0,0" VerticalAlignment="Top" Width="58" Click="OtvoriTipoviDugme_Click"/>
 
     </Grid>
 </Window>
