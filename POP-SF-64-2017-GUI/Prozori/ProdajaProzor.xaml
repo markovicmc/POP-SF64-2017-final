@@ -21,7 +21,7 @@
         <Label Content="EVIDENCIJA PRODAJE" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Button Content="Dodaj" Name="DodajDugme" HorizontalAlignment="Left" Margin="21,316,0,0" VerticalAlignment="Top" Width="75" Click="DodajDugme_Click" RenderTransformOrigin="-3.973,-0.045"/>
         <Button Content="Obriši" HorizontalAlignment="Left" Margin="181,316,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Povratak" HorizontalAlignment="Left" Margin="655,316,-440,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name ="PovratakDugme" Content="Povratak" HorizontalAlignment="Left" Margin="655,316,-440,0" VerticalAlignment="Top" Width="75" Click="PovratakDugme_Click"/>
         <Button Content="Izmeni" Name="IzmeniDugme" HorizontalAlignment="Left" Margin="101,316,0,0" VerticalAlignment="Top" Width="75" Click="IzmeniDugme_Click"/>
     </Grid>
 </Window>

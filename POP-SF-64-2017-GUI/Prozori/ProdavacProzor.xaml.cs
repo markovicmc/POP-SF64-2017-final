@@ -1,4 +1,5 @@
-﻿using POP_SF_64_2017_GUI.Model;
+﻿using POP_SF_64_2017_GUI.Baza;
+using POP_SF_64_2017_GUI.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,10 +20,14 @@ namespace POP_SF_64_2017_GUI.Prozori
     /// <summary>
     /// Interaction logic for SalonProzor.xaml
     /// </summary>
+    /// 
+
     public partial class ProdavacProzor : Window, INotifyPropertyChanged
     {
         public static bool dodaj;
+
         private List<Namestaj> listaNamestaja;
+
         public List<Namestaj> ListaNamestaja
         {
             get
@@ -36,28 +41,84 @@ namespace POP_SF_64_2017_GUI.Prozori
             }
         }
 
-        public Namestaj IzabraniNamestaj { get; set; }
+        public Namestaj IzabraniNamestaj { get; set; } //DataGrid je bindovan na ova dva
         public int IzabraniIndex { get; set; }
 
-        private List<Namestaj> listaZaProdaju = new List<Namestaj>();
+        private List<Namestaj> listaZaProdaju = new List<Namestaj>(); //ovu listu prosledjujemo korpi
+        void PreuzmiTipove()
+        {
+            List<string> tipovi = new List<string>();
+            tipovi.Add("SVE");
 
+            foreach (var item in ListaNamestaja)
+            {
+                tipovi.Add(item.Tip);
+            }
+
+            cbTipPretrage.ItemsSource = tipovi;
+            cbTipPretrage.SelectedValue = "SVE";
+        }
         public ProdavacProzor()
         {
             InitializeComponent();
             DataContext = this;
             UcitajNamestaj();
-            cbTipPretrage.ItemsSource = Database.TipoviNamestaja;
+            PreuzmiTipove();
+
         }
 
         private void UcitajNamestaj()
         {
-            ListaNamestaja = new List<Namestaj>();
-            ListaNamestaja.Add(new Namestaj("Radni sto Lora", "4324", 7500, 3, "Radna soba", true, false));
-            ListaNamestaja.Add(new Namestaj("Kuhinjski sto Tama", "324", 15000, 5, "Kuhinja", false, false));
+            using (var unitOfWork = new Context())  //povezemo sa bazom
+            {
+                ListaNamestaja = unitOfWork.Namestaji.ToList(); //uzmemo iz baze i stavimo u listu
+            }
+        }
+       
 
+        private void ObrisiNamestaj_Click(object sender, RoutedEventArgs e)
+        {
+            if (IzabraniNamestaj == null)
+            {
+                MessageBox.Show("Niste izabrali namestaj.");
+                return;
+            }
+            string sMessageBoxText = "Da li zelite da obrisete ovaj komad namestaja?";
+            string sCaption = "Brisanje namestaja";
+
+            MessageBoxButton btnMessageBox = MessageBoxButton.YesNo;
+            MessageBoxImage icnMessageBox = MessageBoxImage.Warning;
+
+            MessageBoxResult rsltMessageBox = MessageBox.Show(sMessageBoxText, sCaption, btnMessageBox, icnMessageBox);
+
+            if (rsltMessageBox == MessageBoxResult.Yes)
+            {
+                if (IzabraniNamestaj != null)
+                {
+                    Namestaj n = new Namestaj(IzabraniNamestaj);
+
+                    using (var unitOfWork = new Context())
+                    {
+                        Namestaj izBaze = unitOfWork.Namestaji.Find(n.ID);
+                        if (izBaze != null)
+                        {
+                            unitOfWork.Namestaji.Remove(izBaze);
+                            unitOfWork.SaveChanges();
+                        }
+
+                    }
+
+                    if (IzabraniIndex >= 0 && IzabraniIndex < ListaNamestaja.Count)
+                    {
+                        ListaNamestaja.RemoveAt(IzabraniIndex);
+                        IzabraniIndex = -1;
+
+                        Refresh();
+                    }
+                }
+            }
         }
 
-        
         #region INotifyPropertyChanged 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -85,24 +146,23 @@ namespace POP_SF_64_2017_GUI.Prozori
             korpa.ShowDialog();
         }
 
-        private void ButtonAddToShop_Click(object sender, RoutedEventArgs e)
+        private void DodajUKorpu_Click(object sender, RoutedEventArgs e)
         {
             listaZaProdaju.Add(IzabraniNamestaj);
         }
 
-        private void Zatvori(object sender, RoutedEventArgs e)
-        {
-            new MainWindow().Show();
-            this.Close();
-        }
-
-        private void PretragaDugme_Click(object sender, RoutedEventArgs e)
+       
+            private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             List<Namestaj> tempList = new List<Namestaj>();
+            using (var unitOfWork = new Context())
+            {
+                ListaNamestaja = unitOfWork.Namestaji.ToList();
+            }
 
             foreach (var item in ListaNamestaja)
             {
-                if(cbTipPretrage.SelectedValue.ToString() == "SVE" || item.Tip == cbTipPretrage.SelectedValue.ToString())
+                if (cbTipPretrage.SelectedValue.ToString() == "SVE" || item.Tip == cbTipPretrage.SelectedValue.ToString())
                 {
                     if (item.Naziv.Contains(tbPretraga.Text))
                     {
@@ -110,8 +170,23 @@ namespace POP_SF_64_2017_GUI.Prozori
                     }
                 }
             }
-
+            tbPretraga.Text = "";
             ListaNamestaja = tempList;
+        }
+
+        private void ZatvoriDugme_Click(object sender, RoutedEventArgs e)
+        {
+            new MainWindow().Show();
+                 this.Close();
+        }
+
+        private void OtvoriProdajaDugme_Click(object sender, RoutedEventArgs e)
+        {
+            var prozor = new ProdajaProzor();
+            prozor.ShowDialog();
         }
     }
 }
+
+
+

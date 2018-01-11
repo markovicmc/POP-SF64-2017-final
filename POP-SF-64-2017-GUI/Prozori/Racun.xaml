@@ -27,7 +27,7 @@
         <Label Content="Prodavac:" HorizontalAlignment="Left" Margin="21,88,0,0" VerticalAlignment="Top"/>
         <Label Content="Datum:" HorizontalAlignment="Left" Margin="23,114,0,0" VerticalAlignment="Top"/>
         <Label Content="****************************************************************" HorizontalAlignment="Left" Margin="21,145,-27,0" VerticalAlignment="Top" Width="296"/>
-        <Button Content="Izađi" Name="IzadjiDugme" HorizontalAlignment="Left" Margin="260,445,-45,0" VerticalAlignment="Top" Width="75" Click="IzadjiDugme_Click"/>
+        <Button  Content="Izađi" Name="IzadjiDugme" HorizontalAlignment="Left" Margin="260,445,-45,0" VerticalAlignment="Top" Width="75" Click="IzadjiDugme_Click"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="105,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="105,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="105,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>

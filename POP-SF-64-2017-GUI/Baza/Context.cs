@@ -20,9 +20,24 @@ namespace POP_SF_64_2017_GUI.Baza
                 Korisnici.Add(new Korisnik(1, "admin", "admin", "admin", "admin", TipKorisnika.ADMINISTRATOR));
                 SaveChanges();
             }
+
+            bool postoji = false;
+            foreach (var item in TipoviNamestaja.ToList())
+            {
+                if (item.Naziv == "SVE")
+                {
+                    postoji = true;
+                }
+            }
+
+            if (!postoji)
+            {
+                TipoviNamestaja.Add(new TipNamestaja() { Naziv = "SVE" });
+                SaveChanges();
+            }
         }
 
-       
+
 
         public DbSet<Namestaj> Namestaji { get; set; }
         public DbSet<Korisnik> Korisnici { get; set; }

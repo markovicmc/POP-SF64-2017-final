@@ -9,8 +9,10 @@ namespace POP_SF_64_2017_GUI.Model
 {
     public class Akcija
     {
-       // [NotMapped]
-       // [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        private Akcija selektovanaAkcija;
+
+        // [NotMapped]
+        // [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
         public string Naziv { get; set; }
         public DateTime PocetakAkcije { get; set; }
@@ -44,6 +46,11 @@ namespace POP_SF_64_2017_GUI.Model
             Obrisano = obrisano;
         }
 
+        public Akcija(Akcija selektovanaAkcija)
+        {
+            this.selektovanaAkcija = selektovanaAkcija;
+        }
+
         public override string ToString()
         {
             if (AkcijaPostoji)
@@ -51,6 +58,16 @@ namespace POP_SF_64_2017_GUI.Model
                 return Naziv;
             }
             return "Nema";
+        }
+
+        public void Zameni(Akcija a)
+        {
+            ID = a.ID;
+            Naziv = a.Naziv;
+            PocetakAkcije = a.PocetakAkcije;
+            KrajAkcije = a.KrajAkcije;
+            Popust = a.Popust;
+            Obrisano = a.Obrisano;
         }
     }
 }

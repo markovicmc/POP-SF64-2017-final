@@ -39,7 +39,7 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button Name="Kupi" Content="Kupi" HorizontalAlignment="Left" Margin="132,271,0,0" VerticalAlignment="Top" Width="49" Click="Kupi_Click" RenderTransformOrigin="1.267,0.364" Height="22"/>
+        <Button Name="KupiDugme" Content="Kupi" HorizontalAlignment="Left" Margin="132,271,0,0" VerticalAlignment="Top" Width="49" Click="Kupi_Click" RenderTransformOrigin="1.267,0.364" Height="22"/>
         <Button Name="Nastavi" Content="Nastavi kupovinu" HorizontalAlignment="Left" Margin="414,272,-94,0" VerticalAlignment="Top" Width="99" Click="Nastavi_Click" Height="22" Grid.ColumnSpan="2"/>
         <Button Name="Odustani" Content="Odustani" HorizontalAlignment="Left" Margin="99,272,-159,0" VerticalAlignment="Top" Width="60" Click="Odustani_Click" Height="22" Grid.Column="1"/>
         <Label Content="Suma:" HorizontalAlignment="Left" Margin="10,267,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.043,0.327" Height="26" Width="42"/>

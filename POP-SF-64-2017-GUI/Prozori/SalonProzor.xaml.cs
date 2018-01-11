@@ -20,10 +20,10 @@ namespace POP_SF_64_2017_GUI.Prozori
     /// <summary>
     /// Interaction logic for SalonProzor.xaml
     /// </summary>
-    public partial class SalonProzor : Window,  INotifyPropertyChanged
+    public partial class SalonProzor : Window, INotifyPropertyChanged
     {
         public static bool dodaj;
-        
+
         private List<Namestaj> listaNamestaja;
 
         public List<Namestaj> ListaNamestaja
@@ -43,14 +43,27 @@ namespace POP_SF_64_2017_GUI.Prozori
         public int IzabraniIndex { get; set; }
 
         private List<Namestaj> listaZaProdaju = new List<Namestaj>(); //ovu listu prosledjujemo korpi
+        void PreuzmiTipove()
+        {
+            List<string> tipovi = new List<string>();
+            tipovi.Add("SVE");
 
+            foreach (var item in ListaNamestaja)
+            {
+                if(!tipovi.Contains(item.Tip))
+                tipovi.Add(item.Tip);
+            }
+
+            cbTipPretrage.ItemsSource = tipovi;
+            cbTipPretrage.SelectedValue = "SVE";
+        }
         public SalonProzor()
         {
             InitializeComponent();
             DataContext = this;
             UcitajNamestaj();
-            cbTipPretrage.ItemsSource = Database.TipoviNamestaja;
-            cbTipPretrage.SelectedValue = "SVE";
+            PreuzmiTipove();
+
         }
 
         private void UcitajNamestaj()
@@ -81,7 +94,7 @@ namespace POP_SF_64_2017_GUI.Prozori
 
         private void IzmeniNamestaj_Click(object sender, RoutedEventArgs e)
         {
-            if(IzabraniNamestaj != null)
+            if (IzabraniNamestaj != null)
             {
                 Namestaj n = new Namestaj(IzabraniNamestaj);
                 dodaj = false;
@@ -89,16 +102,16 @@ namespace POP_SF_64_2017_GUI.Prozori
                 dodajNamestaj.ShowDialog();
                 if (dodaj)
                 {
-                    
+
                     using (var unitOfWork = new Context())
                     {
-                        Namestaj izBaze = unitOfWork.Namestaji.Find(IzabraniNamestaj); 
-                        if(izBaze != null)
+                        Namestaj izBaze = unitOfWork.Namestaji.Find(IzabraniNamestaj.ID);
+                        if (izBaze != null)
                         {
                             izBaze.Zameni(n);
                             unitOfWork.SaveChanges();
                         }
-                       
+
                     }
                     Refresh();
                 }
@@ -129,7 +142,7 @@ namespace POP_SF_64_2017_GUI.Prozori
                 if (IzabraniNamestaj != null)
                 {
                     Namestaj n = new Namestaj(IzabraniNamestaj);
-                    
+
                     using (var unitOfWork = new Context())
                     {
                         Namestaj izBaze = unitOfWork.Namestaji.Find(n.ID);
@@ -138,7 +151,7 @@ namespace POP_SF_64_2017_GUI.Prozori
                             unitOfWork.Namestaji.Remove(izBaze);
                             unitOfWork.SaveChanges();
                         }
-                        
+
                     }
 
                     if (IzabraniIndex >= 0 && IzabraniIndex < ListaNamestaja.Count)
@@ -149,7 +162,7 @@ namespace POP_SF_64_2017_GUI.Prozori
                         Refresh();
                     }
                 }
-            } 
+            }
         }
 
         #region INotifyPropertyChanged 
@@ -200,6 +213,10 @@ namespace POP_SF_64_2017_GUI.Prozori
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             List<Namestaj> tempList = new List<Namestaj>();
+            using (var unitOfWork = new Context())
+            {
+                ListaNamestaja = unitOfWork.Namestaji.ToList();
+            }
 
             foreach (var item in ListaNamestaja)
             {
@@ -219,7 +236,13 @@ namespace POP_SF_64_2017_GUI.Prozori
         {
             var prozor = new TipNamestajaProzor();
             prozor.ShowDialog();
-            cbTipPretrage.ItemsSource = Database.TipoviNamestaja;
+            PreuzmiTipove();
+        }
+
+        private void OtvoriProdajuDugme_Click(object sender, RoutedEventArgs e)
+        {
+            var prozor = new ProdajaProzor();
+            prozor.ShowDialog();
         }
     }
 }

@@ -27,6 +27,29 @@ namespace POP_SF_64_2017_GUI.Prozori
             ListaAkcija = new ObservableCollection<Akcija>(Database.Akcije);
             this.dataGrid.ItemsSource = ListaAkcija;
             DataContext = this;
+         
+        }
+
+        public Akcija SelektovanaAkcija { get; set; }
+
+        private List<Akcija> akcije = Database.Akcije.ToList();
+        public List<Akcija> Akcije
+        {
+            get
+            {
+                akcije = Database.Akcije.ToList();
+                return akcije;
+            }
+            set
+            {
+                akcije = Database.Akcije.ToList();
+                OnPropertyChanged("Akcije");
+            }
+        }
+
+        private void OnPropertyChanged(string v)
+        {
+            throw new NotImplementedException();
         }
 
         ObservableCollection<Akcija> ListaAkcija
@@ -86,5 +109,40 @@ namespace POP_SF_64_2017_GUI.Prozori
                 ListaAkcija.Remove(IzabranaAkcija);
             }
         }
+
+        void Refresh()
+        {
+            // List<Namestaj> tempList = new List<Namestaj>(korisnici);
+           Akcije = new List<Akcija>();
+        }
+
+        private void IzmeniDugme_Click(object sender, RoutedEventArgs e)
+        {
+                //if (SelektovanaAkcija == null)
+                //{
+                //    MessageBox.Show("Niste izabrali akciju za izmenu.");
+                //    return;
+                //}
+                Akcija a = new Akcija(SelektovanaAkcija);
+                Dodata = false;
+                DodajAkcijaProzor izmeniAkcijaProzor = new DodajAkcijaProzor(a);
+                izmeniAkcijaProzor.ShowDialog();
+
+                if (Dodata)
+                {
+                    SelektovanaAkcija.Zameni(a);
+                    Refresh();
+                    using (var unitOfWork = new Baza.Context())
+                    {
+                        Akcija izBaze = unitOfWork.Akcije.Find(a.ID);
+                        if (a != null)
+                        {
+                            izBaze.Zameni(a);
+                            unitOfWork.SaveChanges();
+                        }
+                    }
+                }
+            }
+        }
     }
-}
+

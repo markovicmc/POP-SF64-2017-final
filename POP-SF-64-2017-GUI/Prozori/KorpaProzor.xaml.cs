@@ -75,7 +75,8 @@ namespace POP_SF_64_2017_GUI.Prozori
 
         private void Kupi_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            var prozor = new Racun();
+            prozor.ShowDialog();
         }
 
         #region INotifyPropertyChanged 

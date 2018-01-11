@@ -5,21 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POP_SF_64_2017_GUI.Prozori"
         mc:Ignorable="d"
-        Title="Akcija" Height="335.978" Width="425.188" WindowStartupLocation="CenterScreen">
+        Title="Akcija" Height="335.978" Width="439.188" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="LISTA AKCIJA" HorizontalAlignment="Left" Margin="26,20,0,0" VerticalAlignment="Top"/>
-        <DataGrid Name="dataGrid" SelectedItem="{Binding IzabranaAkcija, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="183" Margin="0,61,0,0" VerticalAlignment="Top" Width="417"
+        <DataGrid Name="dataGrid" SelectedItem="{Binding IzabranaAkcija, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="183" Margin="0,61,0,0" VerticalAlignment="Top" Width="431"
                   AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="106" Header="Naziv" Binding="{Binding Naziv}"/>
                 <DataGridTextColumn Width="106" Header="Popust" Binding="{Binding Popust}"/>
                 <DataGridTextColumn Width="106" Header="Pocetak" Binding="{Binding PocetakAkcije}"/>
-                <DataGridTextColumn Width="106" Header="Kraj" Binding="{Binding KrajAkcije}"/>
+                <DataGridTextColumn Width="110" Header="Kraj" Binding="{Binding KrajAkcije}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Name="DodajDugme" Content="Dodaj" HorizontalAlignment="Left" Margin="10,265,0,0" VerticalAlignment="Top" Width="75" Click="DodajDugme_Click"/>
         <Button Name="ObrisiDugme" Content="Obrisi" HorizontalAlignment="Left" Margin="170,265,0,0" VerticalAlignment="Top" Width="75" Click="ObrisiDugme_Click"/>
         <Button Content="Povratak" HorizontalAlignment="Left" Margin="332,265,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Izmeni" Name="IzmeniDugme" HorizontalAlignment="Left" Margin="90,265,0,0" VerticalAlignment="Top" Width="75" Click="IzmeniDugme_Click"/>
 
     </Grid>
 </Window>

@@ -65,5 +65,10 @@ namespace POP_SF_64_2017_GUI.Prozori
             //                Prodaja p = new Prodaja(IzabranaProdaja);
             //            }
         }
+
+        private void PovratakDugme_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
